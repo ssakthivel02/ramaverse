@@ -4,37 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RamaVerse - Ramayana Wisdom AI</title>
+    <meta name="description" content="Tamil-first Ramayana devotional and cultural learning app.">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-theme="dark">
+    <div class="glow-bg"></div>
+    <div class="parallax-bg"></div>
+
     <header>
-        <div class="logo-container">
-            <div class="logo-icon">R</div>
-            <div class="brand-name">RamaVerse</div>
-        </div>
+        <a href="index.html" class="logo"><span class="floating-icon">🏹</span> RamaVerse</a>
         <nav>
-            <a href="index.html">Home</a>
+            <a href="#demo">AI Demo</a>
             <a href="about.html">About</a>
             <a href="support.html">Support</a>
             <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
+            <button id="theme-toggle" class="theme-btn">🌓 Theme</button>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>RamaVerse</h1>
-        <h2>Ramayana Wisdom AI</h2>
-        <div class="tamil-line">இராமாயண ஞானம் • தமிழ் முதன்மை • AI வழிகாட்டல்</div>
-        <div class="btn-group">
-            <a href="#ai-demo" class="btn btn-primary">Ask RamaVerse AI</a>
-            <a href="#explorer" class="btn btn-secondary">Explore Ramayana</a>
-        </div>
-    </section>
-
     <div class="container">
-        <section id="ai-demo" class="glass-card">
-            <h3>Interactive AI Search Demo</h3>
-            <div class="chip-container">
+        <section class="hero tilt-card">
+            <h1>RamaVerse</h1>
+            <h2>Ramayana Wisdom AI</h2>
+            <p class="tamil-sub">இராமாயண ஞானம் • தமிழ் முதன்மை • AI வழிகாட்டல்</p>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Experience ancient insights modernized for contemporary challenges. A pure, static, devotional exploration space.</p>
+        </section>
+
+        <section id="demo" class="glass-card tilt-card">
+            <h3 style="color: var(--ayodhya-gold); font-size: 1.5rem;">Interactive Wisdom Demo</h3>
+            <p style="color: var(--text-muted);">Select a life challenge below to simulate Ramayana-based classical wisdom.</p>
+            
+            <div class="chips">
                 <div class="chip" data-topic="Job Interview">Job Interview</div>
                 <div class="chip" data-topic="Fear">Fear</div>
                 <div class="chip" data-topic="Family Problem">Family Problem</div>
@@ -44,20 +44,45 @@
                 <div class="chip" data-topic="Peace">Peace</div>
                 <div class="chip" data-topic="Devotion">Devotion</div>
             </div>
-            <div id="ai-response" style="margin-top: 25px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 8px;"></div>
+
+            <div id="ai-response-box" style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border); min-height: 120px;">
+                </div>
         </section>
 
-        <div class="compliance-box">
-            Ramayana-based cultural and devotional learning. For reflection and educational purposes only. Not medical, legal, financial, or professional advice. Not a remedy app.
+        <section class="glass-card">
+            <h3 style="color: var(--ayodhya-gold); margin-bottom: 1rem;">🎵 Audio Sloka Player (Demo UI)</h3>
+            <div style="display: flex; align-items: center; gap: 15px; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+                <button style="background: var(--saffron); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer;">▶️</button>
+                <div>
+                    <h4 style="color: var(--text-main);">Mangalacharanam</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Bala Kanda • 0:00 / 3:45</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="disclaimer-box">
+            <strong>⚠️ Educational & Cultural Disclaimer:</strong> RamaVerse is purely for cultural, devotional reflection, and educational purposes. It is <strong>NOT</strong> a remedy app. We do not provide medical, legal, financial, psychological, or professional advice. There are no guaranteed outcomes. This static site acts as a UI demonstration without a live AI backend or database.
         </div>
     </div>
 
     <footer>
         <div class="footer-links">
-            <a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a> | <a href="disclaimer.html">Disclaimer</a> | <a href="sources.html">Sources & Copyright</a> | <a href="support.html">Support</a> | <a href="contact.html">Contact</a> | <a href="faq.html">FAQ</a> | <a href="delete-account.html">Delete Account</a> | <a href="delete-data.html">Delete Data</a> | <a href="accessibility.html">Accessibility</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="sources.html">Sources</a>
+            <a href="support.html">Support</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="delete-account.html">Delete Account</a>
+            <a href="delete-data.html">Delete Data</a>
+            <a href="accessibility.html">Accessibility</a>
         </div>
         <p>&copy; 2026 RamaVerse Project. All rights reserved.</p>
     </footer>
-    <script src="js/app.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

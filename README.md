@@ -1,3 +1,5 @@
-# RamaVerse GitHub Pages
+# RamaVerse
 
-Upload the extracted files and folders to the root of the `ramaverse` repository. Do not upload the ZIP itself to GitHub Pages.
+Static GitHub Pages website for RamaVerse.
+
+Upload all files and folders from this package to the repository root.
