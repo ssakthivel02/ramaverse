@@ -1,0 +1,12 @@
+/* Batch 51: Skanda Purana Structured Knowledge Volume 06 */
+:root{--bg:#fffaf0;--ink:#442700;--accent:#7a3f00;--soft:#fff0d2}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Tamil",sans-serif;background:var(--bg);color:var(--ink)}
+.wrap{max-width:1120px;margin:auto;padding:24px}
+.hero{padding:30px;border-radius:28px;background:linear-gradient(135deg,#fff7e6,#ffe0b2);border:1px solid rgba(122,63,0,.18)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px}
+.card{padding:18px;border:1px solid rgba(122,63,0,.16);border-radius:22px;background:#fffdf8;box-shadow:0 10px 26px rgba(91,50,0,.07);text-decoration:none;color:inherit}
+.badge{display:inline-block;border-radius:999px;padding:5px 10px;background:var(--accent);color:#fff;font-size:.82rem}
+.note{line-height:1.75;color:#5f4a24}
+.meta{display:flex;gap:8px;flex-wrap:wrap}
+.meta span{padding:4px 10px;border-radius:999px;background:var(--soft)}

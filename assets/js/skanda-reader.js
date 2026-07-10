@@ -1,0 +1,1 @@
+document.querySelectorAll('[data-status]').forEach(e=>e.textContent=e.dataset.status||'source-review-required');
