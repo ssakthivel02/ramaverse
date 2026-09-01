@@ -1,0 +1,1585 @@
+[
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-rama",
+    "slug": "rama",
+    "tamil_name": "ராமர",
+    "english_name": "Rama",
+    "sanskrit_name": "Rāma",
+    "aliases": [
+      "Ram",
+      "Ramar",
+      "Maryada Purushottam"
+    ],
+    "role": "protagonist",
+    "kandas": [
+      "bala",
+      "ayodhya",
+      "aranya",
+      "kishkindha",
+      "sundara",
+      "yuddha",
+      "uttara"
+    ],
+    "overview_ta": "இராமன் அயோத்தியின் இளவரசன், தசரதனின் மூத்த மகன், மற்றும் தர்மத்தின் உடலாக கருதப்படுகிறார்.",
+    "overview_en": "Rama is the prince of Ayodhya, eldest son of Dasharatha, and the embodiment of dharma, virtue, and ideal kingship.",
+    "virtues": [
+      "Dharma",
+      "Courage",
+      "Compassion",
+      "Integrity",
+      "Duty"
+    ],
+    "key_lesson_ta": "தர்மத்தின் வழியில் நடப்பவர் ஒருபோதும் தோற்கமாட்டார்.",
+    "key_lesson_en": "One who walks the path of dharma never loses.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-sita",
+    "slug": "sita",
+    "tamil_name": "சீதை",
+    "english_name": "Sita",
+    "sanskrit_name": "Sītā",
+    "aliases": [
+      "Janaki",
+      "Vaidehi",
+      "Maithili"
+    ],
+    "role": "protagonist",
+    "kandas": [
+      "bala",
+      "aranya",
+      "sundara",
+      "yuddha",
+      "uttara"
+    ],
+    "overview_ta": "சீதை மிதிலையின் இளவரசி, ஜனகனின் மகள். அவளது வலிமை, பொறுமை மற்றும் பரிசுத்தம் அவளை ஒரு தெய்வீக உருவமாக்குகின்றன.",
+    "overview_en": "Sita is the princess of Mithila, daughter of Janaka. Her strength, patience, and purity make her a divine figure.",
+    "virtues": [
+      "Inner Strength",
+      "Patience",
+      "Purity",
+      "Devotion",
+      "Courage"
+    ],
+    "key_lesson_ta": "பொறுமை என்பது உள் வலிமையின் அறிகுறி.",
+    "key_lesson_en": "Patience is the mark of inner strength.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-hanuman",
+    "slug": "hanuman",
+    "tamil_name": "ஹனுமான்",
+    "english_name": "Hanuman",
+    "sanskrit_name": "Hanumān",
+    "aliases": [
+      "Anjaneya",
+      "Maruti",
+      "Bajrangbali",
+      "Pawanputra"
+    ],
+    "role": "ally",
+    "kandas": [
+      "kishkindha",
+      "sundara",
+      "yuddha"
+    ],
+    "overview_ta": "ஹனுமான் வாயுவின் மகன், பக்தி, தைரியம் மற்றும் சேவையின் உருவகம்.",
+    "overview_en": "Hanuman is the son of Vayu, the embodiment of devotion, courage, and selfless service.",
+    "virtues": [
+      "Devotion",
+      "Courage",
+      "Humility",
+      "Strength",
+      "Loyalty"
+    ],
+    "key_lesson_ta": "பக்தி என்பது தூரத்தை வெல்லும்.",
+    "key_lesson_en": "Devotion conquers all distance.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-lakshmana",
+    "slug": "lakshmana",
+    "tamil_name": "இலக்குவன்",
+    "english_name": "Lakshmana",
+    "sanskrit_name": "Lakṣmaṇa",
+    "aliases": [
+      "Saumitri",
+      "Ramanuja"
+    ],
+    "role": "ally",
+    "kandas": [
+      "bala",
+      "ayodhya",
+      "aranya",
+      "kishkindha",
+      "sundara",
+      "yuddha",
+      "uttara"
+    ],
+    "overview_ta": "இலக்குவன் இராமனின் அர்ப்பணிப்பான இளைய சகோதரன், அவரோடு வனவாசம் சென்றவன்.",
+    "overview_en": "Lakshmana is Rama's devoted younger brother who followed him throughout the forest exile.",
+    "virtues": [
+      "Loyalty",
+      "Courage",
+      "Dedication",
+      "Selflessness"
+    ],
+    "key_lesson_ta": "சேவை என்பது உண்மையான அன்பின் வெளிப்பாடு.",
+    "key_lesson_en": "Service is the expression of true love.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-bharata",
+    "slug": "bharata",
+    "tamil_name": "பரதன்",
+    "english_name": "Bharata",
+    "sanskrit_name": "Bharata",
+    "aliases": [
+      "Bharata"
+    ],
+    "role": "ally",
+    "kandas": [
+      "bala",
+      "ayodhya",
+      "uttara"
+    ],
+    "overview_ta": "பரதன் இராமனின் சகோதரன், தன் தாயின் தவறான ஆசையை நிராகரித்து இராமனின் பாதுகைகளை சிம்மாசனத்தில் வைத்து ஆட்சி செய்தவன்.",
+    "overview_en": "Bharata is Rama's brother who rejected his mother's wrongful wish and ruled with Rama's sandals on the throne.",
+    "virtues": [
+      "Loyalty",
+      "Selflessness",
+      "Duty",
+      "Integrity"
+    ],
+    "key_lesson_ta": "தியாகம் என்பது இழப்பு அல்ல; அது வளர்ச்சி.",
+    "key_lesson_en": "Sacrifice is not loss; it is growth.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-ravana",
+    "slug": "ravana",
+    "tamil_name": "இராவணன்",
+    "english_name": "Ravana",
+    "sanskrit_name": "Rāvaṇa",
+    "aliases": [
+      "Dashagriva",
+      "Lankesh",
+      "Ravana"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "aranya",
+      "sundara",
+      "yuddha"
+    ],
+    "overview_ta": "இராவணன் லங்கையின் அரசன், மிகவும் கற்றறிந்தவன், ஆனால் அகங்காரம் மற்றும் ஆசை அவனை அழித்தது.",
+    "overview_en": "Ravana is the king of Lanka, immensely learned and powerful. Yet his arrogance and desire led to his downfall.",
+    "virtues": [
+      "Knowledge",
+      "Power",
+      "Devotion to Shiva"
+    ],
+    "key_lesson_ta": "அகங்காரம் என்பது வீழ்ச்சியின் ஆரம்பம்.",
+    "key_lesson_en": "Ego is the beginning of downfall.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-vishwamitra",
+    "slug": "vishwamitra",
+    "tamil_name": "விஸ்வாமித்திரர்",
+    "english_name": "Vishwamitra",
+    "sanskrit_name": "Viśvāmitra",
+    "aliases": [
+      "Kaushika",
+      "Vishwamitra"
+    ],
+    "role": "mentor",
+    "kandas": [
+      "bala"
+    ],
+    "overview_ta": "விஸ்வாமித்திரர் ஒரு ஞானி மற்றும் குரு, இராமன் மற்றும் இலக்குவனை தர்மத்தின் வழியில் வழிநடத்தினார்.",
+    "overview_en": "Vishwamitra is a sage and teacher who guided Rama and Lakshmana on the path of dharma.",
+    "virtues": [
+      "Wisdom",
+      "Teaching",
+      "Discipline",
+      "Knowledge"
+    ],
+    "key_lesson_ta": "கல்வி என்பது வாழ்க்கையின் மிகப்பெரிய செல்வம்.",
+    "key_lesson_en": "Education is the greatest wealth of life.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-dasharatha",
+    "slug": "dasharatha",
+    "tamil_name": "தசரதன்",
+    "english_name": "Dasharatha",
+    "sanskrit_name": "Daśaratha",
+    "aliases": [
+      "Dasharatha"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "bala",
+      "ayodhya"
+    ],
+    "overview_ta": "தசரதன் அயோத்தியின் அரசன், இராமனின் தந்தை. வாக்குறுதியை காப்பாற்ற தன் மகனை வனவாசம் அனுப்பினான்.",
+    "overview_en": "Dasharatha is the king of Ayodhya and Rama's father, who sent his son to exile to keep his promise.",
+    "virtues": [
+      "Honour",
+      "Duty",
+      "Integrity"
+    ],
+    "key_lesson_ta": "வாக்குறுதி என்பது கடமையை விட மேலானது.",
+    "key_lesson_en": "A promise is greater than duty.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-sugriva",
+    "slug": "sugriva",
+    "tamil_name": "சுக்ரீவன்",
+    "english_name": "Sugriva",
+    "sanskrit_name": "Sugrīva",
+    "aliases": [
+      "Sugriva"
+    ],
+    "role": "ally",
+    "kandas": [
+      "kishkindha",
+      "yuddha"
+    ],
+    "overview_ta": "சுக்ரீவன் வானர ராஜ்யத்தின் அரசன், இராமனுடன் கூட்டணி அமைத்தவன்.",
+    "overview_en": "Sugriva is the king of the Vanara kingdom who formed an alliance with Rama.",
+    "virtues": [
+      "Friendship",
+      "Loyalty",
+      "Leadership"
+    ],
+    "key_lesson_ta": "கடினமான நேரங்களில் உண்மையான நண்பர் தெரிவார்.",
+    "key_lesson_en": "A true friend is known in difficult times.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-vali",
+    "slug": "vali",
+    "tamil_name": "வாலி",
+    "english_name": "Vali",
+    "sanskrit_name": "Vāli",
+    "aliases": [
+      "Vali",
+      "Bali"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "kishkindha"
+    ],
+    "overview_ta": "வாலி சுக்ரீவனின் சகோதரன் மற்றும் கிஷ்கிந்தையின் முன்னாள் அரசன்.",
+    "overview_en": "Vali is Sugriva's brother and former king of Kishkindha.",
+    "virtues": [
+      "Strength",
+      "Pride"
+    ],
+    "key_lesson_ta": "அகங்காரம் என்பது வீழ்ச்சியின் ஆரம்பம்.",
+    "key_lesson_en": "Ego is the beginning of downfall.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-vibhishana",
+    "slug": "vibhishana",
+    "tamil_name": "விபீஷணன்",
+    "english_name": "Vibhishana",
+    "sanskrit_name": "Vibhīṣaṇa",
+    "aliases": [
+      "Vibhishana"
+    ],
+    "role": "ally",
+    "kandas": [
+      "sundara",
+      "yuddha"
+    ],
+    "overview_ta": "விபீஷணன் இராவணனின் நேர்மையான சகோதரன், தர்மத்திற்காக இராமனை சேர்ந்தவன்.",
+    "overview_en": "Vibhishana is Ravana's righteous brother who joined Rama's side for the sake of dharma.",
+    "virtues": [
+      "Righteousness",
+      "Courage",
+      "Integrity",
+      "Devotion"
+    ],
+    "key_lesson_ta": "தர்மம் என்பது வாழ்க்கையின் ஒளி.",
+    "key_lesson_en": "Dharma is the light of life.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-jatayu",
+    "slug": "jatayu",
+    "tamil_name": "ஜடாயு",
+    "english_name": "Jatayu",
+    "sanskrit_name": "Jaṭāyu",
+    "aliases": [
+      "Jatayu"
+    ],
+    "role": "ally",
+    "kandas": [
+      "aranya"
+    ],
+    "overview_ta": "ஜடாயு ஒரு கழுகு, சீதையை காக்க இராவணனுடன் போரிட்டு உயிரை இழந்தவன்.",
+    "overview_en": "Jatayu is a vulture who fought Ravana to protect Sita and sacrificed his life.",
+    "virtues": [
+      "Sacrifice",
+      "Courage",
+      "Loyalty"
+    ],
+    "key_lesson_ta": "தியாகம் என்பது அன்பின் உயர்ந்த வெளிப்பாடு.",
+    "key_lesson_en": "Sacrifice is the highest expression of love.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-kaikeyi",
+    "slug": "kaikeyi",
+    "tamil_name": "கைகேயி",
+    "english_name": "Kaikeyi",
+    "sanskrit_name": "Kaikeyī",
+    "aliases": [
+      "Kaikeyi"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "ayodhya"
+    ],
+    "overview_ta": "கைகேயி தசரதனின் இரண்டாவது மனைவி, பரதனின் தாய். அவளது வரங்கள் இராமனை வனவாசம் அனுப்பின.",
+    "overview_en": "Kaikeyi is Dasharatha's second wife and Bharata's mother whose boons sent Rama to exile.",
+    "virtues": [
+      "Ambition",
+      "Regret"
+    ],
+    "key_lesson_ta": "வாக்குறுதி என்பது கடமையை விட மேலானது.",
+    "key_lesson_en": "A promise is greater than duty.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-kausalya",
+    "slug": "kausalya",
+    "tamil_name": "கௌசல்யா",
+    "english_name": "Kausalya",
+    "sanskrit_name": "Kausalyā",
+    "aliases": [
+      "Kausalya"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "bala",
+      "ayodhya"
+    ],
+    "overview_ta": "கௌசல்யா தசரதனின் முதல் மனைவி மற்றும் இராமனின் தாய்.",
+    "overview_en": "Kausalya is Dasharatha's first wife and Rama's mother.",
+    "virtues": [
+      "Love",
+      "Devotion",
+      "Strength"
+    ],
+    "key_lesson_ta": "தாய் என்பது முதல் குரு.",
+    "key_lesson_en": "Mother is the first teacher.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-sumitra",
+    "slug": "sumitra",
+    "tamil_name": "சுமித்திரை",
+    "english_name": "Sumitra",
+    "sanskrit_name": "Sumitrā",
+    "aliases": [
+      "Sumitra"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "bala",
+      "ayodhya"
+    ],
+    "overview_ta": "சுமித்திரை தசரதனின் மூன்றாவது மனைவி, இலக்குவன் மற்றும் சத்துருக்கனின் தாய்.",
+    "overview_en": "Sumitra is Dasharatha's third wife and mother of Lakshmana and Shatrughna.",
+    "virtues": [
+      "Love",
+      "Sacrifice",
+      "Wisdom"
+    ],
+    "key_lesson_ta": "தாய் என்பது முதல் குரு.",
+    "key_lesson_en": "Mother is the first teacher.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-shatrughna",
+    "slug": "shatrughna",
+    "tamil_name": "சத்துருக்கன்",
+    "english_name": "Shatrughna",
+    "sanskrit_name": "Śatrughna",
+    "aliases": [
+      "Shatrughna"
+    ],
+    "role": "ally",
+    "kandas": [
+      "bala",
+      "ayodhya",
+      "uttara"
+    ],
+    "overview_ta": "சத்துருக்கன் இலக்குவனின் இரட்டை சகோதரன், பரதனின் நெருங்கிய துணைவன்.",
+    "overview_en": "Shatrughna is Lakshmana's twin brother and Bharata's close companion.",
+    "virtues": [
+      "Loyalty",
+      "Devotion",
+      "Courage"
+    ],
+    "key_lesson_ta": "சேவை என்பது உண்மையான அன்பின் வெளிப்பாடு.",
+    "key_lesson_en": "Service is the expression of true love.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-janaka",
+    "slug": "janaka",
+    "tamil_name": "ஜனகன்",
+    "english_name": "Janaka",
+    "sanskrit_name": "Janaka",
+    "aliases": [
+      "Janaka",
+      "Videha"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "bala"
+    ],
+    "overview_ta": "ஜனகன் மிதிலையின் ஞானமுள்ள அரசன், சீதையின் தத்துவழி தந்தை.",
+    "overview_en": "Janaka is the wise king of Mithila and Sita's adoptive father.",
+    "virtues": [
+      "Wisdom",
+      "Righteousness",
+      "Knowledge"
+    ],
+    "key_lesson_ta": "ஞானம் என்பது வயதிலிருந்து வருவதில்லை.",
+    "key_lesson_en": "Wisdom does not come from age.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-mandodari",
+    "slug": "mandodari",
+    "tamil_name": "மண்டோதரி",
+    "english_name": "Mandodari",
+    "sanskrit_name": "Maṇḍodarī",
+    "aliases": [
+      "Mandodari"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "yuddha"
+    ],
+    "overview_ta": "மண்டோதரி இராவணனின் முதல் மனைவி, நேர்மையான மற்றும் ஞானமுள்ள பெண்மணி.",
+    "overview_en": "Mandodari is Ravana's first wife, a righteous and wise woman.",
+    "virtues": [
+      "Wisdom",
+      "Righteousness",
+      "Devotion"
+    ],
+    "key_lesson_ta": "உண்மையான அழகு நடத்தையில் இருக்கிறது.",
+    "key_lesson_en": "True beauty lies in conduct.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-angada",
+    "slug": "angada",
+    "tamil_name": "அங்கதன்",
+    "english_name": "Angada",
+    "sanskrit_name": "Aṅgada",
+    "aliases": [
+      "Angada"
+    ],
+    "role": "ally",
+    "kandas": [
+      "kishkindha",
+      "yuddha"
+    ],
+    "overview_ta": "அங்கதன் வாலியின் மகன், இராமனின் படையில் முக்கிய வீரன்.",
+    "overview_en": "Angada is Vali's son and a key warrior in Rama's army.",
+    "virtues": [
+      "Courage",
+      "Loyalty",
+      "Leadership"
+    ],
+    "key_lesson_ta": "வீரம் என்பது போர்க்களத்தில் மட்டுமல்ல.",
+    "key_lesson_en": "Bravery is needed not just in battle.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-nala",
+    "slug": "nala",
+    "tamil_name": "நளன்",
+    "english_name": "Nala",
+    "sanskrit_name": "Nala",
+    "aliases": [
+      "Nala"
+    ],
+    "role": "ally",
+    "kandas": [
+      "yuddha"
+    ],
+    "overview_ta": "நளன் வானர கட்டிடக்கலை நிபுணன், இராம சேதுவை கட்டியவன்.",
+    "overview_en": "Nala is the Vanara architect who built the Rama Setu bridge.",
+    "virtues": [
+      "Skill",
+      "Dedication",
+      "Service"
+    ],
+    "key_lesson_ta": "தன்னலமற்ற சேவை என்பது மிக உயர்ந்த யோகம்.",
+    "key_lesson_en": "Selfless service is the highest yoga.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-neela",
+    "slug": "neela",
+    "tamil_name": "நீலன்",
+    "english_name": "Neela",
+    "sanskrit_name": "Nīla",
+    "aliases": [
+      "Neela"
+    ],
+    "role": "ally",
+    "kandas": [
+      "yuddha"
+    ],
+    "overview_ta": "நீலன் வானர படையின் முக்கிய தளபதி.",
+    "overview_en": "Neela is a key commander in the Vanara army.",
+    "virtues": [
+      "Courage",
+      "Leadership",
+      "Loyalty"
+    ],
+    "key_lesson_ta": "ஒற்றுமை என்பது வலிமையின் மூலம்.",
+    "key_lesson_en": "Unity is the source of strength.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-tara",
+    "slug": "tara",
+    "tamil_name": "தாரை",
+    "english_name": "Tara",
+    "sanskrit_name": "Tārā",
+    "aliases": [
+      "Tara"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "kishkindha"
+    ],
+    "overview_ta": "தாரை வாலியின் மனைவி, ஞானமுள்ள ஆலோசகர்.",
+    "overview_en": "Tara is Vali's wife and a wise counsellor.",
+    "virtues": [
+      "Wisdom",
+      "Courage",
+      "Grief"
+    ],
+    "key_lesson_ta": "ஞானம் என்பது அனுபவத்திலிருந்து வருகிறது.",
+    "key_lesson_en": "Wisdom comes from lived experience.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-ruma",
+    "slug": "ruma",
+    "tamil_name": "ரூமை",
+    "english_name": "Ruma",
+    "sanskrit_name": "Rūmā",
+    "aliases": [
+      "Ruma"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "kishkindha"
+    ],
+    "overview_ta": "ரூமை சுக்ரீவனின் மனைவி.",
+    "overview_en": "Ruma is Sugriva's wife.",
+    "virtues": [
+      "Devotion",
+      "Patience"
+    ],
+    "key_lesson_ta": "பொறுமை என்பது உள் வலிமையின் அறிகுறி.",
+    "key_lesson_en": "Patience is the mark of inner strength.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-kumbhakarna",
+    "slug": "kumbhakarna",
+    "tamil_name": "கும்பகர்ணன்",
+    "english_name": "Kumbhakarna",
+    "sanskrit_name": "Kumbhakarṇa",
+    "aliases": [
+      "Kumbhakarna"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "yuddha"
+    ],
+    "overview_ta": "கும்பகர்ணன் இராவணனின் சகோதரன், மிகவும் வலிமையான போர்வீரன்.",
+    "overview_en": "Kumbhakarna is Ravana's brother, an immensely powerful warrior.",
+    "virtues": [
+      "Strength",
+      "Loyalty",
+      "Sleep"
+    ],
+    "key_lesson_ta": "ஒற்றுமை என்பது வலிமையின் மூலம்.",
+    "key_lesson_en": "Unity is the source of strength.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-indrajit",
+    "slug": "indrajit",
+    "tamil_name": "இந்திரஜித்",
+    "english_name": "Indrajit",
+    "sanskrit_name": "Indrajit",
+    "aliases": [
+      "Meghanada",
+      "Indrajit"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "yuddha"
+    ],
+    "overview_ta": "இந்திரஜித் இராவணனின் மகன், மாயாவி போர்க்கலையில் வல்லவன்.",
+    "overview_en": "Indrajit is Ravana's son, skilled in illusory warfare.",
+    "virtues": [
+      "Power",
+      "Cunning",
+      "Loyalty"
+    ],
+    "key_lesson_ta": "அகங்காரம் என்பது வீழ்ச்சியின் ஆரம்பம்.",
+    "key_lesson_en": "Ego is the beginning of downfall.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-maricha",
+    "slug": "maricha",
+    "tamil_name": "மாரீசன்",
+    "english_name": "Maricha",
+    "sanskrit_name": "Mārīca",
+    "aliases": [
+      "Maricha"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "aranya"
+    ],
+    "overview_ta": "மாரீசன் இராவணனின் தூதுவன், தங்க மான் வடிவம் எடுத்தவன்.",
+    "overview_en": "Maricha is Ravana's agent who took the form of a golden deer.",
+    "virtues": [
+      "Deception",
+      "Regret"
+    ],
+    "key_lesson_ta": "பொய் என்பது ஒரு கணம் மட்டுமே வாழும்.",
+    "key_lesson_en": "A lie lives only for a moment.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-surpanakha",
+    "slug": "surpanakha",
+    "tamil_name": "சூர்ப்பணகை",
+    "english_name": "Surpanakha",
+    "sanskrit_name": "Śūrpaṇakhā",
+    "aliases": [
+      "Surpanakha"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "aranya"
+    ],
+    "overview_ta": "சூர்ப்பணகை இராவணனின் சகோதரி, அவளது ஆசை இராமாயணத்தின் திருப்புமுனையை ஏற்படுத்தியது.",
+    "overview_en": "Surpanakha is Ravana's sister whose desire set off the pivotal events of the Ramayana.",
+    "virtues": [
+      "Desire",
+      "Vengeance"
+    ],
+    "key_lesson_ta": "ஆசை என்பது அளவற்றிருந்தால் துன்பம் தரும்.",
+    "key_lesson_en": "Desire, when boundless, brings suffering.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-agastya",
+    "slug": "agastya",
+    "tamil_name": "அகஸ்தியர்",
+    "english_name": "Agastya",
+    "sanskrit_name": "Agastya",
+    "aliases": [
+      "Agastya"
+    ],
+    "role": "mentor",
+    "kandas": [
+      "aranya",
+      "yuddha"
+    ],
+    "overview_ta": "அகஸ்தியர் ஒரு பெரிய ஞானி, இராமனுக்கு ஆதித்ய ஹ்ருதயம் கற்பித்தவர்.",
+    "overview_en": "Agastya is a great sage who taught Rama the Aditya Hridayam.",
+    "virtues": [
+      "Wisdom",
+      "Teaching",
+      "Austerity"
+    ],
+    "key_lesson_ta": "ஞானம் என்பது வயதிலிருந்து வருவதில்லை.",
+    "key_lesson_en": "Wisdom does not come from age.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-valmiki",
+    "slug": "valmiki",
+    "tamil_name": "வால்மீகி",
+    "english_name": "Valmiki",
+    "sanskrit_name": "Vālmīki",
+    "aliases": [
+      "Valmiki",
+      "Adikavi"
+    ],
+    "role": "mentor",
+    "kandas": [
+      "bala",
+      "uttara"
+    ],
+    "overview_ta": "வால்மீகி இராமாயணத்தின் ஆசிரியர், ஆதிகவி என்று அழைக்கப்படுகிறார்.",
+    "overview_en": "Valmiki is the author of the Ramayana, known as the Adikavi (first poet).",
+    "virtues": [
+      "Wisdom",
+      "Compassion",
+      "Poetry"
+    ],
+    "key_lesson_ta": "கல்வி என்பது ஒளி; அஞ்ஞானம் இருள்.",
+    "key_lesson_en": "Education is light; ignorance is darkness.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-narada",
+    "slug": "narada",
+    "tamil_name": "நாரதர்",
+    "english_name": "Narada",
+    "sanskrit_name": "Nārada",
+    "aliases": [
+      "Narada"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "bala"
+    ],
+    "overview_ta": "நாரதர் ஒரு தெய்வீக ஞானி, வால்மீகிக்கு இராமனின் கதையை சொன்னவர்.",
+    "overview_en": "Narada is a divine sage who narrated Rama's story to Valmiki.",
+    "virtues": [
+      "Wisdom",
+      "Devotion",
+      "Music"
+    ],
+    "key_lesson_ta": "ஆண்டவனை நம்பு; அவர் வழிகாட்டுவார்.",
+    "key_lesson_en": "Trust in the divine; it will guide you.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-garuda",
+    "slug": "garuda",
+    "tamil_name": "கருடன்",
+    "english_name": "Garuda",
+    "sanskrit_name": "Garuḍa",
+    "aliases": [
+      "Garuda"
+    ],
+    "role": "ally",
+    "kandas": [
+      "yuddha"
+    ],
+    "overview_ta": "கருடன் விஷ்ணுவின் வாகனம், நாகபாசத்திலிருந்து இராமன் மற்றும் இலக்குவனை காப்பாற்றியவன்.",
+    "overview_en": "Garuda is Vishnu's vehicle who saved Rama and Lakshmana from the Nagapasha.",
+    "virtues": [
+      "Devotion",
+      "Speed",
+      "Power"
+    ],
+    "key_lesson_ta": "நம்பிக்கை என்பது மலைகளை நகர்த்தும்.",
+    "key_lesson_en": "Faith can move mountains.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-sampati",
+    "slug": "sampati",
+    "tamil_name": "சம்பாதி",
+    "english_name": "Sampati",
+    "sanskrit_name": "Sampāti",
+    "aliases": [
+      "Sampati"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "kishkindha"
+    ],
+    "overview_ta": "சம்பாதி ஜடாயுவின் சகோதரன், வானர படைக்கு சீதையின் இருப்பிடத்தை சொன்னவன்.",
+    "overview_en": "Sampati is Jatayu's brother who informed the Vanara army of Sita's location.",
+    "virtues": [
+      "Sacrifice",
+      "Knowledge",
+      "Loyalty"
+    ],
+    "key_lesson_ta": "தியாகம் என்பது அன்பின் உயர்ந்த வெளிப்பாடு.",
+    "key_lesson_en": "Sacrifice is the highest expression of love.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-shabari",
+    "slug": "shabari",
+    "tamil_name": "சபரி",
+    "english_name": "Shabari",
+    "sanskrit_name": "Śabarī",
+    "aliases": [
+      "Shabari"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "aranya"
+    ],
+    "overview_ta": "சபரி ஒரு பக்தியுள்ள பெண்மணி, இராமனுக்காக ஆண்டுகளாக காத்திருந்தவள்.",
+    "overview_en": "Shabari is a devoted woman who waited years for Rama's arrival.",
+    "virtues": [
+      "Devotion",
+      "Patience",
+      "Purity"
+    ],
+    "key_lesson_ta": "பக்தி என்பது தூரத்தை வெல்லும்.",
+    "key_lesson_en": "Devotion conquers all distance.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-guha",
+    "slug": "guha",
+    "tamil_name": "குகன்",
+    "english_name": "Guha",
+    "sanskrit_name": "Guha",
+    "aliases": [
+      "Guha"
+    ],
+    "role": "ally",
+    "kandas": [
+      "ayodhya"
+    ],
+    "overview_ta": "குகன் நிஷாத இனத்தின் தலைவன், இராமனின் நண்பன், கங்கையை கடக்க உதவியவன்.",
+    "overview_en": "Guha is the chief of the Nishada tribe and Rama's friend who helped him cross the Ganga.",
+    "virtues": [
+      "Friendship",
+      "Loyalty",
+      "Service"
+    ],
+    "key_lesson_ta": "நண்பன் என்பது கடினமான நேரங்களில் அருகில் இருப்பவன்.",
+    "key_lesson_en": "A friend is one who stands near in difficult times.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-kevat",
+    "slug": "kevat",
+    "tamil_name": "கேவட்",
+    "english_name": "Kevat",
+    "sanskrit_name": "Kevaṭa",
+    "aliases": [
+      "Kevat"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "ayodhya"
+    ],
+    "overview_ta": "கேவட் ஒரு படகோட்டி, இராமனை கங்கையை கடக்க உதவியவன்.",
+    "overview_en": "Kevat is a boatman who helped Rama cross the Ganga.",
+    "virtues": [
+      "Devotion",
+      "Service",
+      "Humility"
+    ],
+    "key_lesson_ta": "தன்னலமற்ற சேவை என்பது மிக உயர்ந்த யோகம்.",
+    "key_lesson_en": "Selfless service is the highest yoga.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-atri",
+    "slug": "atri",
+    "tamil_name": "அத்திரி",
+    "english_name": "Atri",
+    "sanskrit_name": "Atri",
+    "aliases": [
+      "Atri"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "aranya"
+    ],
+    "overview_ta": "அத்திரி ஒரு ஞானி, அவரது ஆசிரமத்தில் இராமன் தங்கினான்.",
+    "overview_en": "Atri is a sage at whose hermitage Rama stayed.",
+    "virtues": [
+      "Wisdom",
+      "Austerity",
+      "Hospitality"
+    ],
+    "key_lesson_ta": "குரு என்பது இருளில் வழிகாட்டும் விளக்கு.",
+    "key_lesson_en": "A teacher is a lamp that guides in darkness.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-anasuya",
+    "slug": "anasuya",
+    "tamil_name": "அனசூயை",
+    "english_name": "Anasuya",
+    "sanskrit_name": "Anasūyā",
+    "aliases": [
+      "Anasuya"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "aranya"
+    ],
+    "overview_ta": "அனசூயை அத்திரியின் மனைவி, சீதைக்கு ஆசீர்வாதம் அளித்தவள்.",
+    "overview_en": "Anasuya is Atri's wife who blessed Sita.",
+    "virtues": [
+      "Wisdom",
+      "Devotion",
+      "Purity"
+    ],
+    "key_lesson_ta": "தாய் என்பது முதல் குரு.",
+    "key_lesson_en": "Mother is the first teacher.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-shurpanakha",
+    "slug": "shurpanakha",
+    "tamil_name": "சூர்ப்பணகை",
+    "english_name": "Shurpanakha",
+    "sanskrit_name": "Śūrpaṇakhā",
+    "aliases": [
+      "Shurpanakha"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "aranya"
+    ],
+    "overview_ta": "சூர்ப்பணகை இராவணனின் சகோதரி.",
+    "overview_en": "Shurpanakha is Ravana's sister.",
+    "virtues": [
+      "Desire",
+      "Vengeance"
+    ],
+    "key_lesson_ta": "ஆசை என்பது அளவற்றிருந்தால் துன்பம் தரும்.",
+    "key_lesson_en": "Desire, when boundless, brings suffering.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-khara",
+    "slug": "khara",
+    "tamil_name": "கரன்",
+    "english_name": "Khara",
+    "sanskrit_name": "Khara",
+    "aliases": [
+      "Khara"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "aranya"
+    ],
+    "overview_ta": "கரன் இராவணனின் சகோதரன், தண்டகாரண்யத்தின் ராட்சஸ தளபதி.",
+    "overview_en": "Khara is Ravana's brother and the demon commander of Dandakaranya.",
+    "virtues": [
+      "Power",
+      "Aggression"
+    ],
+    "key_lesson_ta": "தீமையை வெல்ல நன்மை எப்போதும் வலிமையானது.",
+    "key_lesson_en": "Goodness is always stronger than evil.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-dushana",
+    "slug": "dushana",
+    "tamil_name": "தூஷணன்",
+    "english_name": "Dushana",
+    "sanskrit_name": "Dūṣaṇa",
+    "aliases": [
+      "Dushana"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "aranya"
+    ],
+    "overview_ta": "தூஷணன் கரனின் சகோதரன், ராட்சஸ படையின் தளபதி.",
+    "overview_en": "Dushana is Khara's brother and a demon army commander.",
+    "virtues": [
+      "Power",
+      "Aggression"
+    ],
+    "key_lesson_ta": "தீமையை வெல்ல நன்மை எப்போதும் வலிமையானது.",
+    "key_lesson_en": "Goodness is always stronger than evil.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-trijata",
+    "slug": "trijata",
+    "tamil_name": "திரிஜடை",
+    "english_name": "Trijata",
+    "sanskrit_name": "Trijatā",
+    "aliases": [
+      "Trijata"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "sundara",
+      "yuddha"
+    ],
+    "overview_ta": "திரிஜடை இராவணனின் ஒரு ராட்சஸி, சீதைக்கு அன்பான காவலாளி.",
+    "overview_en": "Trijata is a Rakshasi in Lanka who was kind to Sita.",
+    "virtues": [
+      "Compassion",
+      "Wisdom",
+      "Kindness"
+    ],
+    "key_lesson_ta": "கருணை என்பது தெய்வீக குணம்.",
+    "key_lesson_en": "Compassion is a divine quality.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-akampana",
+    "slug": "akampana",
+    "tamil_name": "அகம்பனன்",
+    "english_name": "Akampana",
+    "sanskrit_name": "Akampana",
+    "aliases": [
+      "Akampana"
+    ],
+    "role": "antagonist",
+    "kandas": [
+      "yuddha"
+    ],
+    "overview_ta": "அகம்பனன் இராவணனின் படை தளபதி.",
+    "overview_en": "Akampana is a commander in Ravana's army.",
+    "virtues": [
+      "Power",
+      "Loyalty"
+    ],
+    "key_lesson_ta": "ஒற்றுமை என்பது வலிமையின் மூலம்.",
+    "key_lesson_en": "Unity is the source of strength.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-malyavan",
+    "slug": "malyavan",
+    "tamil_name": "மால்யவான்",
+    "english_name": "Malyavan",
+    "sanskrit_name": "Mālyavān",
+    "aliases": [
+      "Malyavan"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "yuddha"
+    ],
+    "overview_ta": "மால்யவான் இராவணனின் தாத்தா, சீதையை திருப்பி அனுப்புமாறு இராவணனுக்கு அறிவுரை கூறியவர்.",
+    "overview_en": "Malyavan is Ravana's grandfather who advised him to return Sita.",
+    "virtues": [
+      "Wisdom",
+      "Righteousness"
+    ],
+    "key_lesson_ta": "ஞானம் என்பது வயதிலிருந்து வருவதில்லை.",
+    "key_lesson_en": "Wisdom does not come from age.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-sushena",
+    "slug": "sushena",
+    "tamil_name": "சுஷேணன்",
+    "english_name": "Sushena",
+    "sanskrit_name": "Suṣeṇa",
+    "aliases": [
+      "Sushena"
+    ],
+    "role": "ally",
+    "kandas": [
+      "yuddha"
+    ],
+    "overview_ta": "சுஷேணன் வானர படையின் வைத்தியர், இலக்குவனை குணப்படுத்தியவர்.",
+    "overview_en": "Sushena is the physician of the Vanara army who healed Lakshmana.",
+    "virtues": [
+      "Healing",
+      "Knowledge",
+      "Service"
+    ],
+    "key_lesson_ta": "சேவை என்பது வாழ்க்கையின் உயர்ந்த நோக்கம்.",
+    "key_lesson_en": "Service is the highest purpose of life.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-jambavan",
+    "slug": "jambavan",
+    "tamil_name": "ஜாம்பவான்",
+    "english_name": "Jambavan",
+    "sanskrit_name": "Jāmbavān",
+    "aliases": [
+      "Jambavan"
+    ],
+    "role": "ally",
+    "kandas": [
+      "kishkindha",
+      "yuddha"
+    ],
+    "overview_ta": "ஜாம்பவான் கரடி இனத்தின் தலைவன், ஹனுமானுக்கு அவனது சக்தியை நினைவூட்டியவன்.",
+    "overview_en": "Jambavan is the king of bears who reminded Hanuman of his powers.",
+    "virtues": [
+      "Wisdom",
+      "Guidance",
+      "Strength"
+    ],
+    "key_lesson_ta": "தன்னம்பிக்கை என்பது வெற்றியின் முதல் படி.",
+    "key_lesson_en": "Self-confidence is the first step to victory.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-rama-lila",
+    "slug": "rama-lila",
+    "tamil_name": "இராம லீலை",
+    "english_name": "Rama Lila",
+    "sanskrit_name": "Rāma Līlā",
+    "aliases": [
+      "Ramalila"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "uttara"
+    ],
+    "overview_ta": "இராம லீலை இராமாயணத்தின் நாடக வடிவம்.",
+    "overview_en": "Rama Lila is the dramatic form of the Ramayana.",
+    "virtues": [
+      "Culture",
+      "Devotion",
+      "Art"
+    ],
+    "key_lesson_ta": "இராமாயணம் என்பது வாழ்க்கையின் கையேடு.",
+    "key_lesson_en": "The Ramayana is the manual for life.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-luv",
+    "slug": "luv",
+    "tamil_name": "லவன்",
+    "english_name": "Luv",
+    "sanskrit_name": "Lava",
+    "aliases": [
+      "Lava",
+      "Luv"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "uttara"
+    ],
+    "overview_ta": "லவன் இராமன் மற்றும் சீதையின் மகன், வால்மீகியால் வளர்க்கப்பட்டவன்.",
+    "overview_en": "Luv is Rama and Sita's son, raised by Valmiki.",
+    "virtues": [
+      "Courage",
+      "Devotion",
+      "Skill"
+    ],
+    "key_lesson_ta": "குழந்தைகள் என்பது நாளைய நம்பிக்கை.",
+    "key_lesson_en": "Children are tomorrow's hope.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-kush",
+    "slug": "kush",
+    "tamil_name": "குசன்",
+    "english_name": "Kush",
+    "sanskrit_name": "Kuśa",
+    "aliases": [
+      "Kusa",
+      "Kush"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "uttara"
+    ],
+    "overview_ta": "குசன் இராமன் மற்றும் சீதையின் மகன், வால்மீகியால் வளர்க்கப்பட்டவன்.",
+    "overview_en": "Kush is Rama and Sita's son, raised by Valmiki.",
+    "virtues": [
+      "Courage",
+      "Devotion",
+      "Skill"
+    ],
+    "key_lesson_ta": "குழந்தைகள் என்பது நாளைய நம்பிக்கை.",
+    "key_lesson_en": "Children are tomorrow's hope.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-urmila",
+    "slug": "urmila",
+    "tamil_name": "ஊர்மிளை",
+    "english_name": "Urmila",
+    "sanskrit_name": "Ūrmiḷā",
+    "aliases": [
+      "Urmila"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "bala",
+      "ayodhya",
+      "uttara"
+    ],
+    "overview_ta": "ஊர்மிளை சீதையின் சகோதரி, இலக்குவனின் மனைவி, 14 ஆண்டுகள் தனியாக காத்திருந்தவள்.",
+    "overview_en": "Urmila is Sita's sister and Lakshmana's wife who waited alone for 14 years.",
+    "virtues": [
+      "Sacrifice",
+      "Patience",
+      "Devotion"
+    ],
+    "key_lesson_ta": "தியாகம் என்பது அன்பின் உயர்ந்த வெளிப்பாடு.",
+    "key_lesson_en": "Sacrifice is the highest expression of love.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-mandavi",
+    "slug": "mandavi",
+    "tamil_name": "மாண்டவி",
+    "english_name": "Mandavi",
+    "sanskrit_name": "Māṇḍavī",
+    "aliases": [
+      "Mandavi"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "bala",
+      "ayodhya"
+    ],
+    "overview_ta": "மாண்டவி சீதையின் உறவினர், பரதனின் மனைவி.",
+    "overview_en": "Mandavi is Sita's cousin and Bharata's wife.",
+    "virtues": [
+      "Devotion",
+      "Loyalty"
+    ],
+    "key_lesson_ta": "சேவை என்பது உண்மையான அன்பின் வெளிப்பாடு.",
+    "key_lesson_en": "Service is the expression of true love.",
+    "source_reference": "Valmiki Ramayana"
+  },
+  {
+    "source_classification": "valmiki_ramayana",
+    "copyright_status": "original",
+    "review_status": "needs_human_tamil_review",
+    "kids_safe": true,
+    "schema_version": "1.0",
+    "related_content_ids": [],
+    "id": "char-shrutakirti",
+    "slug": "shrutakirti",
+    "tamil_name": "ஸ்ருதகீர்த்தி",
+    "english_name": "Shrutakirti",
+    "sanskrit_name": "Śrutakīrti",
+    "aliases": [
+      "Shrutakirti"
+    ],
+    "role": "supporting",
+    "kandas": [
+      "bala",
+      "ayodhya"
+    ],
+    "overview_ta": "ஸ்ருதகீர்த்தி சீதையின் உறவினர், சத்துருக்கனின் மனைவி.",
+    "overview_en": "Shrutakirti is Sita's cousin and Shatrughna's wife.",
+    "virtues": [
+      "Devotion",
+      "Loyalty"
+    ],
+    "key_lesson_ta": "சேவை என்பது உண்மையான அன்பின் வெளிப்பாடு.",
+    "key_lesson_en": "Service is the expression of true love.",
+    "source_reference": "Valmiki Ramayana"
+  }
+]
