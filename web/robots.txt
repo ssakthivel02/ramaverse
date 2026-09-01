@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /bookmarks
+Disallow: /library
+Disallow: /settings
+Sitemap: https://ramaverse.omsaravanabhava.org/sitemap.xml

@@ -1,0 +1,2 @@
+import{load,base,esc,t}from'./core.js';import{render}from'./pages.js';
+addEventListener('popstate',render);(async()=>{try{const r=sessionStorage.getItem('rv-redirect');if(r){sessionStorage.removeItem('rv-redirect');history.replaceState({},'',r)}await load();render();if('serviceWorker'in navigator)navigator.serviceWorker.register(base('sw.js')).catch(()=>{})}catch(e){document.getElementById('app').innerHTML=`<div class="loader"><h1>${esc(t('error.load','RamaVerse could not load'))}</h1><p>${esc(e.message)}</p></div>`}})();

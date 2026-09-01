@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "RamaVerse",
+    "slug": "ramaverse",
+    "scheme": "ramaverse",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#07051A"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ramaverse.app"
+    },
+    "android": {
+      "package": "com.ramaverse.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#07051A"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-localization"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "REPLACE_WITH_EAS_PROJECT_ID"
+      }
+    },
+    "_comment_targetSdk": "Android targetSdkVersion is controlled by the Expo SDK/config-plugin version, not set directly here. Expo SDK 52 targets Android 15 / API 35 by default. DO NOT hand-edit targetSdkVersion in android/build.gradle unless ejected. Before every Play Store upload run: `npx expo config --type public` and check the generated android/build.gradle (after `npx expo prebuild`) for compileSdkVersion/targetSdkVersion >= 35. Only bump to API 36 once `expo-doctor` and EAS Build report no incompatible native modules."
+  }
+}

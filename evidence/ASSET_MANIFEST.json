@@ -1,0 +1,27 @@
+[
+  {
+    "path": "web/assets/app-home.svg",
+    "bytes": 2371,
+    "sha256": "82dda9108d245ecf167e41204b44edc41e947db5d313da58083876ab5c8302bc"
+  },
+  {
+    "path": "web/assets/hero.svg",
+    "bytes": 2726,
+    "sha256": "a54bbb96882d41755783daf905808a93262aef0d455f05c26544211a02f1e548"
+  },
+  {
+    "path": "web/assets/icon.svg",
+    "bytes": 798,
+    "sha256": "c2c8adae731f372bc68e5f7fc5af11d984961bd4b39d813ac3aac4091d010fad"
+  },
+  {
+    "path": "web/assets/og-image.svg",
+    "bytes": 2726,
+    "sha256": "a54bbb96882d41755783daf905808a93262aef0d455f05c26544211a02f1e548"
+  },
+  {
+    "path": "web/assets/web-preview.svg",
+    "bytes": 2323,
+    "sha256": "0e978ef216718d7a2f3772f5c53dc8021fb3ab3396aa0ab53bb13e53c9b5b352"
+  }
+]

@@ -1,0 +1,21 @@
+RamaVerse GitHub Pages Upload Steps
+
+1. Open your GitHub repository: ssakthivel02/ramaverse
+2. Upload ALL files and folders from this ZIP contents into the repository root.
+3. Do not upload the parent folder itself. index.html must be in the root.
+4. GitHub > Settings > Pages > Deploy from branch > main > /(root).
+5. Test these URLs:
+   https://ssakthivel02.github.io/ramaverse/
+   https://ssakthivel02.github.io/ramaverse/privacy.html
+   https://ssakthivel02.github.io/ramaverse/delete-account.html
+   https://ssakthivel02.github.io/ramaverse/delete-data.html
+   https://ssakthivel02.github.io/ramaverse/contact.html
+   https://ssakthivel02.github.io/ramaverse/disclaimer.html
+   https://ssakthivel02.github.io/ramaverse/sources.html
+   https://ssakthivel02.github.io/ramaverse/about.html
+   https://ssakthivel02.github.io/ramaverse/terms.html
+   https://ssakthivel02.github.io/ramaverse/support.html
+   https://ssakthivel02.github.io/ramaverse/faq.html
+   https://ssakthivel02.github.io/ramaverse/accessibility.html
+
+Tamil font fix included: Noto Sans Tamil / Noto Serif Tamil.
