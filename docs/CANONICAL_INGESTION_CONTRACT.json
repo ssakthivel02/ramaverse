@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "project": "RamaVerse",
+  "expectedSourceArchive": {
+    "name": "RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip",
+    "sha256": "fccb48547e795c1927453fe838e5ec745c71bfe80702bb246a40cd0c66b94983",
+    "bytes": 5311980
+  },
+  "expectedCanonicalBaseline": 550,
+  "stagingRoot": "staging/canonical-import",
+  "publicationRoot": "public/data",
+  "requiresIntegrationAuthorization": true,
+  "publicationStateRequired": "validated",
+  "collectionFiles": {
+    "format": "jsonl",
+    "pathPrefix": "collections/",
+    "hashAlgorithm": "sha256"
+  },
+  "recordEnvelope": {
+    "requiredFields": [
+      "recordId",
+      "collection",
+      "sourcePath",
+      "payloadSha256",
+      "payload"
+    ],
+    "recordIdUniqueGlobally": true,
+    "collectionMustMatchManifest": true,
+    "payloadHashAlgorithm": "sha256-canonical-json"
+  },
+  "reconciliationMustEqual": {
+    "missingRecords": 0,
+    "duplicateRecordIds": 0,
+    "malformedRecords": 0,
+    "hashMismatches": 0
+  },
+  "publicationAllowedOnlyAfterValidation": true,
+  "regenerateMissingRecords": false
+}
