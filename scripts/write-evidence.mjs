@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 const pkg = JSON.parse(await readFile("package.json", "utf8"));
 const routes = JSON.parse(await readFile("src/data/routes.json", "utf8"));
-const rc = JSON.parse(await readFile("config/authoritative-rc.json", "utf8"));
+const rc = JSON.parse(await readFile("docs/AUTHORITATIVE_RC_GATE.json", "utf8"));
 
 async function totalBytes(dir) {
   let total = 0;
