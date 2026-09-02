@@ -148,6 +148,7 @@ multiDisk.writeUInt16LE(1, multiDisk.length - 22 + 4);
 expectReject("multi-disk", multiDisk, "multi-disk");
 
 const zip64Marker = Buffer.from(safeZip);
+zip64Marker.writeUInt16LE(0xffff, zip64Marker.length - 22 + 8);
 zip64Marker.writeUInt16LE(0xffff, zip64Marker.length - 22 + 10);
 expectReject("ZIP64", zip64Marker, "ZIP64");
 
