@@ -61,9 +61,9 @@ function manifestPassesControlledPublication(manifest: CanonicalManifest): boole
     if (!collection.id || ids.has(collection.id)) return false;
     ids.add(collection.id);
     if (!collection.file?.startsWith("collections/") || !collection.file.endsWith(".jsonl") || collection.file.includes("..")) return false;
-    if (!Number.isInteger(collection.recordCount) || (collection.recordCount ?? -1) < 0) return false;
+    if (typeof collection.recordCount !== "number" || !Number.isInteger(collection.recordCount) || collection.recordCount < 0) return false;
     if (!SHA256_RE.test(collection.sha256 ?? "")) return false;
-    total += collection.recordCount ?? 0;
+    total += collection.recordCount;
   }
 
   return total === EXPECTED_BASELINE;
