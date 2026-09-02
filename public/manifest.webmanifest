@@ -1,0 +1,10 @@
+{
+  "name": "RamaVerse",
+  "short_name": "RamaVerse",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090611",
+  "theme_color": "#090611",
+  "description": "Source-aware Ramayana knowledge, learning and guidance platform.",
+  "icons": [{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}

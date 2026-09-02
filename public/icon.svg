@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="RamaVerse symbol">
+  <defs><radialGradient id="g" cx="35%" cy="30%"><stop offset="0" stop-color="#fff2bd"/><stop offset=".48" stop-color="#f5b15c"/><stop offset="1" stop-color="#9f3f2b"/></radialGradient></defs>
+  <rect width="512" height="512" rx="128" fill="#090611"/>
+  <circle cx="256" cy="256" r="164" fill="none" stroke="#7b63dc" stroke-opacity=".35" stroke-width="3"/>
+  <circle cx="256" cy="256" r="112" fill="url(#g)"/>
+  <text x="256" y="292" text-anchor="middle" font-size="128" font-family="serif" font-weight="700" fill="#331407">राम</text>
+</svg>

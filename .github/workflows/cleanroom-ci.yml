@@ -1,0 +1,32 @@
+name: RamaVerse clean-room CI
+
+on:
+  push:
+    branches: [website-nextgen-cleanroom-v1]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: npm run test:routes
+      - run: npm run typecheck
+      - run: npm run build
+      - name: Verify no forbidden legacy source roots
+        run: |
+          test ! -d web
+          test ! -d mobile
+          test ! -d android
+          test ! -d node_modules
+          ! grep -R -n -E 'KirthiVerse|DivyaNexus|OmSaravanaBhava|SakthiAI|SaravanAI' src public docs --exclude='CLEANROOM_RELEASE_CONTRACT.md'
