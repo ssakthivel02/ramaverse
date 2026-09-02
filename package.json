@@ -1,28 +1,40 @@
 {
   "name": "ramaverse-nextgen-cleanroom",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc --noEmit",
+    "lint": "eslint src e2e playwright.config.ts --max-warnings=0",
     "test:routes": "node scripts/check-routes.mjs",
     "test:foundation": "node scripts/check-foundation.mjs",
     "test:rc-gate": "node scripts/check-rc-gate.mjs",
     "verify:rc": "node scripts/verify-authoritative-rc.mjs",
     "test": "npm run test:routes && npm run test:foundation && npm run test:rc-gate",
-    "build": "npm run test && npm run typecheck && vite build",
+    "build": "vite build && node scripts/prepare-dist.mjs && node scripts/check-dist.mjs",
+    "verify": "npm run test && npm run lint && npm run typecheck && npm run build",
+    "test:e2e": "playwright test",
+    "evidence": "node scripts/write-evidence.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "5.0.2",
-    "vite": "7.1.4",
-    "typescript": "5.9.2",
     "react": "19.1.1",
     "react-dom": "19.1.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1",
     "@types/react": "19.1.12",
-    "@types/react-dom": "19.1.9"
+    "@types/react-dom": "19.1.9",
+    "@vitejs/plugin-react": "5.0.2",
+    "eslint": "10.9.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.69.0",
+    "vite": "7.1.4"
   }
 }
