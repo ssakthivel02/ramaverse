@@ -94,7 +94,7 @@ function inspectLocalRecord(buffer, central, centralDirectoryOffset) {
 
   if (localNameBytes.compare(central.nameBytes) !== 0) fail(`local/central entry name mismatch: ${central.name}`);
   if (compressionMethod !== central.compressionMethod) fail(`local/central compression mismatch: ${central.name}`);
-  if ((flags & 0x0841) !== (central.flags & 0x0841)) fail(`local/central critical flag mismatch: ${central.name}`);
+  if ((flags & 0x0849) !== (central.flags & 0x0849)) fail(`local/central critical flag mismatch: ${central.name}`);
 
   const dataStart = nameStart + nameLength + extraLength;
   const dataEnd = dataStart + central.compressedSize;
@@ -137,7 +137,6 @@ export function inspectZipBuffer(buffer, policy) {
     assertBounds(buffer, cursor, 46, `central directory entry ${index + 1}`);
     if (buffer.readUInt32LE(cursor) !== CENTRAL_SIGNATURE) fail(`central directory signature mismatch at entry ${index + 1}`);
 
-    const versionMadeBy = buffer.readUInt16LE(cursor + 4);
     const flags = buffer.readUInt16LE(cursor + 8);
     const compressionMethod = buffer.readUInt16LE(cursor + 10);
     const crc32 = buffer.readUInt32LE(cursor + 16);
