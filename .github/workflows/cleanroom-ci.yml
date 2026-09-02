@@ -22,10 +22,16 @@ jobs:
       - run: npm run test:routes
       - run: npm run typecheck
       - run: npm run build
-      - name: Verify no forbidden legacy source roots
+      - name: Verify clean-room tracked source isolation
+        shell: bash
         run: |
-          test ! -d web
-          test ! -d mobile
-          test ! -d android
-          test ! -d node_modules
-          ! grep -R -n -E 'KirthiVerse|DivyaNexus|OmSaravanaBhava|SakthiAI|SaravanAI' src public docs --exclude='CLEANROOM_RELEASE_CONTRACT.md'
+          set -euo pipefail
+          if git ls-files | grep -Eq '^(web|mobile|android|node_modules|dist|coverage|\.vite)/'; then
+            echo 'Forbidden legacy/generated root is tracked in the clean-room branch.'
+            exit 1
+          fi
+          if grep -R -n -E 'KirthiVerse|DivyaNexus|OmSaravanaBhava|SakthiAI|SaravanAI' src public; then
+            echo 'Cross-project source reference detected.'
+            exit 1
+          fi
+          echo 'CLEANROOM_SOURCE_ISOLATION_PASS'
