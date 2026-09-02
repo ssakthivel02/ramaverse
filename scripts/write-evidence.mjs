@@ -24,12 +24,16 @@ async function totalBytes(dir) {
   return total;
 }
 
+const candidateCommit = process.env.CANDIDATE_SHA || process.env.GITHUB_SHA || "local";
+const workflowCommit = process.env.GITHUB_SHA || "local";
+
 const evidence = {
-  schemaVersion: 2,
+  schemaVersion: 3,
   generatedAt: new Date().toISOString(),
   repository: "ssakthivel02/ramaverse",
   branch: process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF_NAME || "local",
-  commit: process.env.GITHUB_SHA || "local",
+  candidateCommit,
+  workflowCommit,
   packageVersion: pkg.version,
   classification: "QUALITY_GATE_GREEN_NOT_PRODUCTION_READY",
   routeContract: {
@@ -71,6 +75,6 @@ await mkdir("artifacts", { recursive: true });
 await writeFile("artifacts/validation-summary.json", `${JSON.stringify(evidence, null, 2)}\n`);
 await writeFile(
   "artifacts/validation-summary.md",
-  `# RamaVerse Next-Gen Quality Evidence\n\n- Commit: \`${evidence.commit}\`\n- Branch: \`${evidence.branch}\`\n- Routes: ${evidence.routeContract.actual}/${evidence.routeContract.expected}\n- /knowledge: ${evidence.routeContract.knowledgePresent ? "PASS" : "FAIL"}\n- Canonical 550 imported: NO\n- Dependency lock: PASS \`${lockDigest}\`\n- Production dependency audit (high+): PASS\n- Lint: PASS\n- TypeScript: PASS\n- Production build: PASS\n- Chromium E2E: PASS\n- Axe serious/critical: PASS\n- Mobile overflow: PASS\n- Reduced motion: PASS\n- Clean-room isolation: PASS\n- Production deployment: NO\n\nClassification: **${evidence.classification}**\n`,
+  `# RamaVerse Next-Gen Quality Evidence\n\n- Candidate commit: \`${candidateCommit}\`\n- Workflow commit/ref SHA: \`${workflowCommit}\`\n- Branch: \`${evidence.branch}\`\n- Routes: ${evidence.routeContract.actual}/${evidence.routeContract.expected}\n- /knowledge: ${evidence.routeContract.knowledgePresent ? "PASS" : "FAIL"}\n- Canonical 550 imported: NO\n- Dependency lock: PASS \`${lockDigest}\`\n- Production dependency audit (high+): PASS\n- Lint: PASS\n- TypeScript: PASS\n- Production build: PASS\n- Chromium E2E: PASS\n- Axe serious/critical: PASS\n- Mobile overflow: PASS\n- Reduced motion: PASS\n- Clean-room isolation: PASS\n- Production deployment: NO\n\nClassification: **${evidence.classification}**\n`,
 );
-console.log(`EVIDENCE_WRITTEN: ${evidence.commit}`);
+console.log(`EVIDENCE_WRITTEN_FOR_CANDIDATE: ${candidateCommit}`);
