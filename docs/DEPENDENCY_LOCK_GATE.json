@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "project": "RamaVerse",
+  "packageVersion": "0.3.0",
+  "nodeMajor": 22,
+  "packageLockVersion": 3,
+  "generatedFromGreenRun": 33692965514,
+  "greenHead": "f0b5f81960cc87d53078aeeaf29a9480f51585a5",
+  "packageLockBytes": 106804,
+  "packageLockSha256": "26cc7e5c9d8e088507af86e4c8e372465b897a8d2b5b4bb4ef684854732eb0a5",
+  "productionAuditHigh": "pass",
+  "allowDependencyDrift": false
+}
