@@ -16,6 +16,9 @@ concurrency:
   group: ramaverse-nextgen-quality-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -71,7 +74,7 @@ jobs:
       - name: Upload immutable candidate evidence
         uses: actions/upload-artifact@v4
         with:
-          name: ramaverse-nextgen-quality-${{ github.sha }}
+          name: ramaverse-nextgen-quality-${{ env.CANDIDATE_SHA }}
           path: |
             dist/
             artifacts/validation-summary.json
