@@ -1,9 +1,10 @@
-name: RamaVerse next-gen quality gates
+name: RamaVerse next-gen quality + visual gates
 
 on:
   push:
     branches:
       - website-nextgen-quality-gates-v1
+      - website-nextgen-visual-evidence-v1
   pull_request:
     branches:
       - website-nextgen-cleanroom-v1
@@ -47,8 +48,14 @@ jobs:
       - name: Validate contracts, lint, types and production build
         run: npm run verify
 
-      - name: Validate real-browser routes, interactions, accessibility and responsive behavior
+      - name: Prepare evidence directories
+        run: mkdir -p artifacts/visual
+
+      - name: Validate browser routes, interactions, accessibility, responsive behavior and capture visuals
         run: npm run test:e2e
+
+      - name: Hash visual evidence
+        run: npm run evidence:visual
 
       - name: Verify clean-room tracked source isolation
         shell: bash
@@ -74,11 +81,12 @@ jobs:
       - name: Upload immutable candidate evidence
         uses: actions/upload-artifact@v4
         with:
-          name: ramaverse-nextgen-quality-${{ env.CANDIDATE_SHA }}
+          name: ramaverse-nextgen-visual-${{ env.CANDIDATE_SHA }}
           path: |
             dist/
             artifacts/validation-summary.json
             artifacts/validation-summary.md
+            artifacts/visual/
             package-lock.json
             playwright-report/
           if-no-files-found: error
