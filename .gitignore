@@ -8,3 +8,5 @@ coverage/
 !.env.example
 .DS_Store
 Thumbs.db
+staging/canonical-import/
+RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip
