@@ -1,0 +1,19 @@
+{
+  "project": "RamaVerse",
+  "archive": "RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip",
+  "sha256": "fccb48547e795c1927453fe838e5ec745c71bfe80702bb246a40cd0c66b94983",
+  "zipBytes": 5311980,
+  "zipEntriesEvidence": 1045,
+  "editableSourceFilesEvidence": 963,
+  "canonicalBaseline": 550,
+  "stagingPublication": 0,
+  "mobileModified": false,
+  "expectedProjects": ["RamaVerse"],
+  "secretLikePathsEvidence": [],
+  "nodeModulesEvidence": [],
+  "cachesEvidence": [],
+  "decisionEvidence": "READY_FOR_GITHUB_RECONCILIATION",
+  "integrationAuthorized": false,
+  "productionAuthorized": false,
+  "rule": "Hash and byte identity must pass before extraction. Canonical records must then be inventoried and reconciled record-by-record; this file is not authority to regenerate missing records."
+}
