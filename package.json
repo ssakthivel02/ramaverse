@@ -19,6 +19,7 @@
     "verify": "npm run test && npm run lint && npm run typecheck && npm run build",
     "test:e2e": "playwright test",
     "evidence": "node scripts/write-evidence.mjs",
+    "evidence:visual": "node scripts/write-visual-evidence.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
