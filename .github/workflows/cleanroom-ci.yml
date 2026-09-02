@@ -5,9 +5,11 @@ on:
     branches:
       - website-nextgen-quality-gates-v1
       - website-nextgen-visual-evidence-v1
+      - website-nextgen-mobile-nav-v1
   pull_request:
     branches:
       - website-nextgen-cleanroom-v1
+      - website-nextgen-visual-evidence-v1
       - main
 
 permissions:
