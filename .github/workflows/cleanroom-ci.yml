@@ -5,7 +5,9 @@ on:
     branches:
       - website-nextgen-quality-gates-v1
   pull_request:
-    branches: [main]
+    branches:
+      - website-nextgen-cleanroom-v1
+      - main
 
 permissions:
   contents: read
@@ -24,8 +26,14 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install pinned dependencies
-        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Recreate exact dependency lock candidate
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+
+      - name: Reject dependency graph drift
+        run: node scripts/check-lock.mjs
+
+      - name: Install exact verified dependency graph
+        run: npm ci --ignore-scripts --no-audit --no-fund
 
       - name: Audit production dependency surface
         run: npm audit --omit=dev --audit-level=high
