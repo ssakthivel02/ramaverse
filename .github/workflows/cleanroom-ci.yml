@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - website-nextgen-quality-gates-v1
+      - website-nextgen-canonical-ingestion-v1
   pull_request:
     branches:
       - website-nextgen-cleanroom-v1
@@ -44,7 +45,7 @@ jobs:
       - name: Install Chromium for browser validation
         run: npx playwright install --with-deps chromium
 
-      - name: Validate contracts, lint, types and production build
+      - name: Validate contracts, canonical ingestion, lint, types and production build
         run: npm run verify
 
       - name: Validate real-browser routes, interactions, accessibility and responsive behavior
@@ -54,8 +55,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if git ls-files | grep -Eq '^(web|mobile|android|node_modules|dist|coverage|playwright-report|test-results|artifacts|\.vite)/'; then
-            echo 'Forbidden legacy/generated root is tracked in the quality-gate branch.'
+          if git ls-files | grep -Eq '^(web|mobile|android|node_modules|dist|coverage|playwright-report|test-results|artifacts|staging|\.vite)/'; then
+            echo 'Forbidden legacy/generated/staging root is tracked in the next-gen branch.'
             exit 1
           fi
           if grep -R -n -E 'KirthiVerse|DivyaNexus|OmSaravanaBhava|SakthiAI|SaravanAI' src public e2e; then
@@ -66,6 +67,10 @@ jobs:
             echo 'Secret-like tracked path detected.'
             exit 1
           fi
+          if git ls-files | grep -F 'RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip'; then
+            echo 'Authoritative RC archive must never be committed to the next-gen branch.'
+            exit 1
+          fi
           echo 'CLEANROOM_SOURCE_ISOLATION_PASS'
 
       - name: Write exact-head validation evidence
@@ -74,7 +79,7 @@ jobs:
       - name: Upload immutable candidate evidence
         uses: actions/upload-artifact@v4
         with:
-          name: ramaverse-nextgen-quality-${{ env.CANDIDATE_SHA }}
+          name: ramaverse-nextgen-candidate-${{ env.CANDIDATE_SHA }}
           path: |
             dist/
             artifacts/validation-summary.json
