@@ -48,7 +48,7 @@ const candidateCommit = process.env.CANDIDATE_SHA || process.env.GITHUB_SHA || "
 const workflowCommit = process.env.GITHUB_SHA || "local";
 const canonicalPublicationPresent =
   (await exists(join(ingestionContract.publicationRoot, "canonical-manifest.json"))) ||
-  (await exists(join(ingestionContract.publicationRoot, "canonical"));
+  (await exists(join(ingestionContract.publicationRoot, "canonical")));
 const canonicalStagingPresent = await exists(ingestionContract.stagingRoot);
 
 if (rc.integrationAuthorized !== true && (canonicalPublicationPresent || canonicalStagingPresent)) {
