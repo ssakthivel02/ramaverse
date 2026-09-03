@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://ssakthivel02.github.io/ramaverse/sitemap.xml

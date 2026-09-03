@@ -1,0 +1,92 @@
+name: RamaVerse next-gen quality gates
+
+on:
+  push:
+    branches:
+      - website-nextgen-quality-gates-v1
+      - website-nextgen-canonical-ingestion-v1
+      - website-nextgen-rc-intake-safety-v1
+      - website-nextgen-reconciliation-prep-v1
+  pull_request:
+    branches:
+      - website-nextgen-cleanroom-v1
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ramaverse-nextgen-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Recreate exact dependency lock candidate
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+
+      - name: Reject dependency graph drift
+        run: node scripts/check-lock.mjs
+
+      - name: Install exact verified dependency graph
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Audit production dependency surface
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Install Chromium for browser validation
+        run: npx playwright install --with-deps chromium
+
+      - name: Validate contracts, RC intake safety, reconciliation prep, canonical ingestion, lint, types and production build
+        run: npm run verify
+
+      - name: Validate real-browser routes, interactions, accessibility and responsive behavior
+        run: npm run test:e2e
+
+      - name: Verify clean-room tracked source isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -Eq '^(web|mobile|android|node_modules|dist|coverage|playwright-report|test-results|artifacts|staging|\.vite)/'; then
+            echo 'Forbidden legacy/generated/staging root is tracked in the next-gen branch.'
+            exit 1
+          fi
+          if grep -R -n -E 'KirthiVerse|DivyaNexus|OmSaravanaBhava|SakthiAI|SaravanAI' src public e2e; then
+            echo 'Cross-project source reference detected.'
+            exit 1
+          fi
+          if git ls-files | grep -Ei '(^|/)(\.env($|\.)|[^/]+\.(pem|p12|pfx|key|keystore|jks)$)'; then
+            echo 'Secret-like tracked path detected.'
+            exit 1
+          fi
+          if git ls-files | grep -F 'RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip'; then
+            echo 'Authoritative RC archive must never be committed to the next-gen branch.'
+            exit 1
+          fi
+          echo 'CLEANROOM_SOURCE_ISOLATION_PASS'
+
+      - name: Write exact-head validation evidence
+        run: npm run evidence
+
+      - name: Upload immutable candidate evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ramaverse-nextgen-candidate-${{ env.CANDIDATE_SHA }}
+          path: |
+            dist/
+            artifacts/validation-summary.json
+            artifacts/validation-summary.md
+            package-lock.json
+            playwright-report/
+          if-no-files-found: error
+          retention-days: 14

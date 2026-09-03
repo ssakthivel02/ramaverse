@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vite/
+coverage/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+staging/canonical-import/
+RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip
