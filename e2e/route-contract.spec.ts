@@ -47,6 +47,19 @@ test.describe("RamaVerse deep-link and interaction contract", () => {
     await expect(status).toContainText("not sent to an external model");
   });
 
+  test("provenance pipeline separates verified tooling from blocked source operations", async ({ page }) => {
+    await page.goto("/sources");
+    const pipeline = page.getByRole("table", { name: "RamaVerse verification pipeline" });
+    await expect(pipeline).toContainText("RC identity + ZIP intake");
+    await expect(pipeline).toContainText("Tooling verified");
+    await expect(pipeline).toContainText("Authoritative RC inventory");
+    await expect(pipeline).toContainText("Awaiting archive");
+    await expect(pipeline).toContainText("Archive extraction");
+    await expect(pipeline).toContainText("Canonical 550 integration");
+    await expect(pipeline).toContainText("Production cutover");
+    await expect(pipeline.getByText("Blocked", { exact: true })).toHaveCount(3);
+  });
+
   test("reduced-motion preference disables transitions", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
