@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "project": "RamaVerse",
+  "authoritativeArchive": {
+    "name": "RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip",
+    "sha256": "fccb48547e795c1927453fe838e5ec745c71bfe80702bb246a40cd0c66b94983",
+    "bytes": 5311980
+  },
+  "mode": "inventory-only-before-extraction",
+  "zip": {
+    "allowMultiDisk": false,
+    "allowZip64": false,
+    "allowEncryptedEntries": false,
+    "allowSymlinks": false,
+    "allowedCompressionMethods": [0, 8],
+    "maxEntries": 20000,
+    "maxEntryNameBytes": 1024,
+    "maxEntryUncompressedBytes": 268435456,
+    "maxTotalUncompressedBytes": 1073741824,
+    "maxCompressionRatio": 200,
+    "rejectAbsolutePaths": true,
+    "rejectParentTraversal": true,
+    "rejectBackslashPaths": true,
+    "rejectCaseInsensitiveDuplicates": true,
+    "rejectWindowsReservedNames": true,
+    "requireLocalCentralNameMatch": true,
+    "rejectOverlappingDataRanges": true
+  },
+  "extract": false,
+  "canonicalIntegrationAuthorized": false
+}

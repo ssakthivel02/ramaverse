@@ -5,6 +5,7 @@ on:
     branches:
       - website-nextgen-quality-gates-v1
       - website-nextgen-canonical-ingestion-v1
+      - website-nextgen-rc-intake-safety-v1
   pull_request:
     branches:
       - website-nextgen-cleanroom-v1
@@ -45,7 +46,7 @@ jobs:
       - name: Install Chromium for browser validation
         run: npx playwright install --with-deps chromium
 
-      - name: Validate contracts, canonical ingestion, lint, types and production build
+      - name: Validate contracts, RC intake safety, canonical ingestion, lint, types and production build
         run: npm run verify
 
       - name: Validate real-browser routes, interactions, accessibility and responsive behavior
