@@ -349,6 +349,15 @@ function SourcesWorkspace({ canonical }: { canonical: CanonicalStatus }) {
     ["Mobile / VC14 mutation", "Outside this website branch"],
     ["Production cutover", "Explicit authorization required"],
   ];
+  const pipeline = [
+    ["Clean-room website", "Verified", "Fresh next-generation source and quality gates are established."],
+    ["RC identity + ZIP intake", "Tooling verified", "Exact archive identity and inventory-only ZIP safety checks are implemented and tested."],
+    ["Authoritative RC inventory", "Awaiting archive", "The exact validated RC ZIP is not stored in this branch or CI workspace."],
+    ["Metadata reconciliation plan", "Tooling verified", "Every future inventory entry receives exactly one deterministic review or quarantine decision."],
+    ["Archive extraction", "Blocked", "No extraction authorization exists; the planner performs no copy or extraction operation."],
+    ["Canonical 550 integration", "Blocked", "Record-level reconciliation and explicit integration authorization are still required."],
+    ["Production cutover", "Blocked", "Production requires passed release gates and explicit owner authorization."],
+  ];
 
   return (
     <div className="workspace-panel sources-workspace">
@@ -365,6 +374,18 @@ function SourcesWorkspace({ canonical }: { canonical: CanonicalStatus }) {
           <div role="row" key={label}>
             <span role="cell">{label}</span>
             <strong role="cell">{value}</strong>
+          </div>
+        ))}
+      </div>
+      <div className="source-callout">
+        <strong>Verification pipeline</strong>
+        <p>Tooling readiness and real source evidence are shown separately. A green tool does not imply that the authoritative archive or canonical records have been imported.</p>
+      </div>
+      <div className="trust-table" role="table" aria-label="RamaVerse verification pipeline">
+        {pipeline.map(([label, status, detail]) => (
+          <div role="row" key={label}>
+            <span role="cell"><b>{label}</b><small>{detail}</small></span>
+            <strong role="cell">{status}</strong>
           </div>
         ))}
       </div>
