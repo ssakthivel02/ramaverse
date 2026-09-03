@@ -7,6 +7,7 @@ const routes = JSON.parse(await readFile("src/data/routes.json", "utf8"));
 const rc = JSON.parse(await readFile("docs/AUTHORITATIVE_RC_GATE.json", "utf8"));
 const ingestionContract = JSON.parse(await readFile("docs/CANONICAL_INGESTION_CONTRACT.json", "utf8"));
 const intakeContract = JSON.parse(await readFile("docs/RC_INTAKE_SAFETY_CONTRACT.json", "utf8"));
+const reconciliationContract = JSON.parse(await readFile("docs/RECONCILIATION_PREP_CONTRACT.json", "utf8"));
 const lockGate = JSON.parse(await readFile("docs/DEPENDENCY_LOCK_GATE.json", "utf8"));
 const lock = await readFile("package-lock.json");
 const lockDigest = createHash("sha256").update(lock).digest("hex");
@@ -36,6 +37,27 @@ if (
 ) {
   throw new Error("Refusing to write green evidence: RC intake safety contract drifted from the authoritative gate or authorized a prohibited operation.");
 }
+if (
+  reconciliationContract.project !== rc.project ||
+  reconciliationContract.authoritativeArchive.name !== rc.archive ||
+  reconciliationContract.authoritativeArchive.sha256 !== rc.sha256 ||
+  reconciliationContract.authoritativeArchive.bytes !== rc.zipBytes ||
+  reconciliationContract.expectedCanonicalBaseline !== rc.canonicalBaseline ||
+  reconciliationContract.mode !== "metadata-only-reconciliation-plan-before-extraction" ||
+  reconciliationContract.scope.websiteOnly !== true ||
+  reconciliationContract.scope.mobileVc14MutationAllowed !== false ||
+  reconciliationContract.scope.automaticExtractionAllowed !== false ||
+  reconciliationContract.scope.automaticIntegrationAllowed !== false ||
+  reconciliationContract.scope.automaticCanonicalWinnerAllowed !== false ||
+  reconciliationContract.scope.canonicalRewriteAllowed !== false ||
+  reconciliationContract.scope.recordRegenerationAllowed !== false ||
+  reconciliationContract.scope.crossProjectMixingAllowed !== false ||
+  reconciliationContract.extractionAuthorized !== false ||
+  reconciliationContract.canonicalIntegrationAuthorized !== false ||
+  reconciliationContract.productionAuthorized !== false
+) {
+  throw new Error("Refusing to write green evidence: reconciliation preparation contract drifted or authorized a prohibited operation.");
+}
 
 async function exists(path) {
   try {
@@ -63,6 +85,8 @@ const canonicalPublicationPresent =
   (await exists(join(ingestionContract.publicationRoot, "canonical")));
 const canonicalStagingPresent = await exists(ingestionContract.stagingRoot);
 const authoritativeArchivePresent = await exists(rc.archive);
+const rcInventoryPresent = await exists("rc-inventory.json");
+const reconciliationPlanPresent = await exists("rc-reconciliation-plan.json");
 
 if (rc.integrationAuthorized !== true && (canonicalPublicationPresent || canonicalStagingPresent)) {
   throw new Error("Refusing to write green evidence: canonical staging/publication exists while integration is unauthorized.");
@@ -70,16 +94,19 @@ if (rc.integrationAuthorized !== true && (canonicalPublicationPresent || canonic
 if (authoritativeArchivePresent) {
   throw new Error("Refusing to write green CI evidence: authoritative RC archive is present in the validation workspace.");
 }
+if (rcInventoryPresent || reconciliationPlanPresent) {
+  throw new Error("Refusing to write green CI evidence: real RC inventory/reconciliation artifacts are present in the clean validation workspace.");
+}
 
 const evidence = {
-  schemaVersion: 5,
+  schemaVersion: 6,
   generatedAt: new Date().toISOString(),
   repository: "ssakthivel02/ramaverse",
   branch: process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF_NAME || "local",
   candidateCommit,
   workflowCommit,
   packageVersion: pkg.version,
-  classification: "RC_INTAKE_SAFETY_GATE_GREEN_NOT_PRODUCTION_READY",
+  classification: "RECONCILIATION_PREP_GATE_GREEN_NOT_PRODUCTION_READY",
   routeContract: {
     expected: 22,
     actual: routes.length,
@@ -101,6 +128,24 @@ const evidence = {
     maxEntries: intakeContract.zip.maxEntries,
     maxTotalUncompressedBytes: intakeContract.zip.maxTotalUncompressedBytes,
     maxCompressionRatio: intakeContract.zip.maxCompressionRatio
+  },
+  reconciliationPreparation: {
+    mode: reconciliationContract.mode,
+    toolingValidated: true,
+    realInventoryPresent: rcInventoryPresent,
+    realPlanPresent: reconciliationPlanPresent,
+    preserveEveryInventoryEntry: reconciliationContract.planRequirements.preserveEveryInventoryEntry,
+    oneDecisionPerInventoryEntry: reconciliationContract.planRequirements.oneDecisionPerInventoryEntry,
+    automaticExtractionAllowed: reconciliationContract.scope.automaticExtractionAllowed,
+    automaticIntegrationAllowed: reconciliationContract.scope.automaticIntegrationAllowed,
+    automaticCanonicalWinnerAllowed: reconciliationContract.scope.automaticCanonicalWinnerAllowed,
+    canonicalRewriteAllowed: reconciliationContract.scope.canonicalRewriteAllowed,
+    recordRegenerationAllowed: reconciliationContract.scope.recordRegenerationAllowed,
+    mobileVc14MutationAllowed: reconciliationContract.scope.mobileVc14MutationAllowed,
+    crossProjectMixingAllowed: reconciliationContract.scope.crossProjectMixingAllowed,
+    extractionAuthorized: reconciliationContract.extractionAuthorized,
+    canonicalIntegrationAuthorized: reconciliationContract.canonicalIntegrationAuthorized,
+    productionAuthorized: reconciliationContract.productionAuthorized
   },
   canonical: {
     expectedBaseline: rc.canonicalBaseline,
@@ -129,6 +174,12 @@ const evidence = {
     rcIntakePathCollisionSymlinkEncryptionRejection: "pass",
     rcIntakeZip64MultidiskBombRejection: "pass",
     rcIntakeLocalCentralConsistency: "pass",
+    reconciliationPrepContract: "pass",
+    reconciliationSyntheticInventoryClassification: "pass",
+    reconciliationOneDecisionPerEntry: "pass",
+    reconciliationDeterministicPlanHash: "pass",
+    reconciliationCrossProjectBlocker: "pass",
+    reconciliationUnauthorizedOperationRejection: "pass",
     canonicalIngestionContract: "pass",
     canonicalSynthetic550Fixture: "pass",
     canonicalDuplicateIdRejection: "pass",
@@ -152,6 +203,6 @@ await mkdir("artifacts", { recursive: true });
 await writeFile("artifacts/validation-summary.json", `${JSON.stringify(evidence, null, 2)}\n`);
 await writeFile(
   "artifacts/validation-summary.md",
-  `# RamaVerse Next-Gen RC Intake Safety Evidence\n\n- Candidate commit: \`${candidateCommit}\`\n- Workflow commit/ref SHA: \`${workflowCommit}\`\n- Branch: \`${evidence.branch}\`\n- Routes: ${evidence.routeContract.actual}/${evidence.routeContract.expected}\n- /knowledge: ${evidence.routeContract.knowledgePresent ? "PASS" : "FAIL"}\n- Authoritative RC SHA-256: \`${rc.sha256}\`\n- Authoritative RC present in CI workspace: NO\n- RC intake mode: INVENTORY ONLY\n- Extraction authorized: NO\n- Extraction performed: NO\n- ZIP64 / multidisk / encrypted / symlink allowed: NO / NO / NO / NO\n- RC adversarial ZIP self-tests: PASS\n- Canonical expected baseline: ${rc.canonicalBaseline}\n- Canonical 550 imported: NO\n- Integration authorized: ${rc.integrationAuthorized ? "YES" : "NO"}\n- Canonical staging present: ${canonicalStagingPresent ? "YES" : "NO"}\n- Canonical publication present: ${canonicalPublicationPresent ? "YES" : "NO"}\n- Missing-record regeneration allowed: NO\n- Canonical ingestion contract: PASS\n- Synthetic 550-record validator fixture: PASS\n- Duplicate record-ID rejection: PASS\n- Dependency lock: PASS \`${lockDigest}\`\n- Production dependency audit (high+): PASS\n- Lint: PASS\n- TypeScript: PASS\n- Production build: PASS\n- Chromium E2E: PASS\n- Axe serious/critical: PASS\n- Mobile overflow: PASS\n- Reduced motion: PASS\n- Clean-room isolation: PASS\n- Production deployment: NO\n\nClassification: **${evidence.classification}**\n`,
+  `# RamaVerse Next-Gen Reconciliation Preparation Evidence\n\n- Candidate commit: \`${candidateCommit}\`\n- Workflow commit/ref SHA: \`${workflowCommit}\`\n- Branch: \`${evidence.branch}\`\n- Routes: ${evidence.routeContract.actual}/${evidence.routeContract.expected}\n- /knowledge: ${evidence.routeContract.knowledgePresent ? "PASS" : "FAIL"}\n- Authoritative RC SHA-256: \`${rc.sha256}\`\n- Authoritative RC present in CI workspace: NO\n- RC intake mode: INVENTORY ONLY\n- Extraction authorized/performed: NO / NO\n- Reconciliation mode: METADATA-ONLY PLAN BEFORE EXTRACTION\n- Real RC inventory present in CI: NO\n- Real reconciliation plan present in CI: NO\n- Reconciliation planner synthetic classification: PASS\n- One decision per inventory entry: PASS\n- Deterministic plan SHA-256: PASS\n- Cross-project blocker: PASS\n- Automatic canonical winner: FORBIDDEN\n- Canonical rewrite/regeneration: FORBIDDEN / FORBIDDEN\n- Mobile/VC14 mutation: FORBIDDEN\n- Canonical expected baseline: ${rc.canonicalBaseline}\n- Canonical 550 imported: NO\n- Integration authorized: ${rc.integrationAuthorized ? "YES" : "NO"}\n- Canonical staging/publication present: ${canonicalStagingPresent ? "YES" : "NO"} / ${canonicalPublicationPresent ? "YES" : "NO"}\n- Dependency lock: PASS \`${lockDigest}\`\n- Production dependency audit (high+): PASS\n- Lint / TypeScript / production build: PASS / PASS / PASS\n- Chromium E2E / Axe serious-critical / mobile overflow / reduced motion: PASS / PASS / PASS / PASS\n- Clean-room isolation: PASS\n- Production deployment: NO\n\nClassification: **${evidence.classification}**\n`,
 );
 console.log(`EVIDENCE_WRITTEN_FOR_CANDIDATE: ${candidateCommit}`);
