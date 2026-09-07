@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "project": "RamaVerse",
+  "mode": "validated-quarantine-to-isolated-review-staging-only",
+  "authoritativeArchive": {
+    "name": "RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip",
+    "sha256": "fccb48547e795c1927453fe838e5ec745c71bfe80702bb246a40cd0c66b94983",
+    "bytes": 5311980
+  },
+  "expectedCanonicalBaseline": 550,
+  "requiredQuarantineMode": "verified-archive-to-disposable-quarantine-only",
+  "stagingRoot": ".staging/ramaverse-rc-review",
+  "allowedPromotionActions": [
+    "review-canonical-candidate",
+    "review-website-source",
+    "review-documentation",
+    "review-asset",
+    "review-unknown"
+  ],
+  "neverPromoteActions": [
+    "directory-metadata-only",
+    "quarantine-mobile-vc14",
+    "quarantine-generated-cache",
+    "quarantine-secret-like",
+    "quarantine-executable",
+    "reject-cross-project"
+  ],
+  "requirements": {
+    "quarantineManifestRequired": true,
+    "quarantineFileHashRecheckRequired": true,
+    "reconciliationPlanRequired": true,
+    "planSha256MustMatchManifest": true,
+    "oneDecisionPerInventoryEntry": true,
+    "planBlockersMustEqualZero": true,
+    "copyOnlyNoMoveDelete": true,
+    "destinationMustBeFresh": true,
+    "destinationMustRemainInsideStagingRoot": true,
+    "exclusiveFileCreate": true,
+    "deterministicPromotionManifest": true,
+    "preserveRelativePath": true,
+    "sourceTreeMutationAllowed": false,
+    "publicTreeMutationAllowed": false,
+    "canonicalPublicationMutationAllowed": false,
+    "mobileVc14MutationAllowed": false,
+    "canonicalWinnerSelectionAllowed": false,
+    "canonicalRewriteAllowed": false,
+    "recordRegenerationAllowed": false,
+    "productionMutationAllowed": false
+  },
+  "promotionAuthorized": false,
+  "canonicalIntegrationAuthorized": false,
+  "productionAuthorized": false
+}
