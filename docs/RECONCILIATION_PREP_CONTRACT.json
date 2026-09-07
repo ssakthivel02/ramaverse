@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "project": "RamaVerse",
+  "mode": "metadata-only-reconciliation-plan-before-extraction",
+  "authoritativeArchive": {
+    "name": "RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip",
+    "sha256": "fccb48547e795c1927453fe838e5ec745c71bfe80702bb246a40cd0c66b94983",
+    "bytes": 5311980
+  },
+  "expectedCanonicalBaseline": 550,
+  "input": {
+    "requiredInventorySchemaVersion": 1,
+    "requireArchiveIdentityChecks": true,
+    "requireInventoryOnlyPolicy": true,
+    "requireExtractionFalse": true,
+    "requireIntegrationFalse": true,
+    "requireProductionFalse": true
+  },
+  "scope": {
+    "websiteOnly": true,
+    "mobileVc14MutationAllowed": false,
+    "automaticExtractionAllowed": false,
+    "automaticIntegrationAllowed": false,
+    "automaticCanonicalWinnerAllowed": false,
+    "canonicalRewriteAllowed": false,
+    "recordRegenerationAllowed": false,
+    "crossProjectMixingAllowed": false
+  },
+  "classification": {
+    "websiteSourceExtensions": [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".css", ".scss", ".html", ".json"],
+    "canonicalCandidateExtensions": [".json", ".jsonl", ".csv", ".tsv", ".yaml", ".yml", ".md", ".txt"],
+    "canonicalSignalSegments": ["canonical", "corpus", "content", "data", "dataset", "ramayana", "kanda", "sarga", "wisdom", "guidance", "characters", "places", "stories", "quiz", "audio"],
+    "documentationExtensions": [".md", ".mdx", ".txt", ".pdf"],
+    "assetExtensions": [".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif", ".avif", ".ico", ".mp3", ".wav", ".m4a", ".ogg", ".mp4", ".webm", ".woff", ".woff2", ".ttf"],
+    "generatedOrCacheSegments": ["node_modules", "dist", "build", "coverage", ".vite", ".cache", "playwright-report", "test-results", ".next", "out"],
+    "websiteScopeSegments": ["src", "public", "web", "website", "client", "frontend", "docs", "scripts", "tests", "e2e"],
+    "mobileOutOfScopeSegments": ["mobile", "android", "ios", "vc14"],
+    "secretLikeExtensions": [".pem", ".key", ".p12", ".pfx", ".jks", ".keystore"],
+    "secretLikeNames": [".env", ".env.local", ".env.production", "credentials.json", "secrets.json"],
+    "executableExtensions": [".exe", ".dll", ".so", ".dylib", ".msi", ".bat", ".cmd", ".ps1", ".sh"],
+    "crossProjectSignals": ["KirthiVerse", "DivyaNexus", "OmSaravanaBhava", "SakthiAI", "SaravanAI"]
+  },
+  "actions": [
+    "directory-metadata-only",
+    "review-canonical-candidate",
+    "review-website-source",
+    "review-documentation",
+    "review-asset",
+    "review-unknown",
+    "quarantine-mobile-vc14",
+    "quarantine-generated-cache",
+    "quarantine-secret-like",
+    "quarantine-executable",
+    "reject-cross-project"
+  ],
+  "planRequirements": {
+    "preserveEveryInventoryEntry": true,
+    "oneDecisionPerInventoryEntry": true,
+    "preserveOriginalPath": true,
+    "preserveInventoryMetadata": true,
+    "includeDeterministicPlanSha256": true,
+    "blockersPreventExtractionAuthorization": true,
+    "planDoesNotExtract": true,
+    "planDoesNotCopy": true,
+    "planDoesNotRewrite": true,
+    "planDoesNotPublish": true
+  },
+  "extractionAuthorized": false,
+  "canonicalIntegrationAuthorized": false,
+  "productionAuthorized": false
+}
