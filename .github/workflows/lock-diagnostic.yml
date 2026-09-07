@@ -1,4 +1,4 @@
-name: RamaVerse temporary lock diagnostic
+name: RamaVerse temporary lock restoration
 
 on:
   push:
@@ -6,10 +6,11 @@ on:
       - website-nextgen-quarantine-extraction-gate-v1
 
 permissions:
-  contents: read
+  contents: write
+  actions: read
 
 jobs:
-  lock-diagnostic:
+  restore-green-lock:
     runs-on: ubuntu-latest
     timeout-minutes: 7
     steps:
@@ -17,33 +18,33 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Recreate package lock
-        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-      - name: Print lock identity and reviewed transitive paths
+      - name: Restore exact green lock artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
-          sha256sum package-lock.json
-          wc -c package-lock.json
-          node - <<'NODE'
-          const lock = require('./package-lock.json');
-          const paths = Object.keys(lock.packages || {});
-          console.log(`PACKAGE_ENTRY_COUNT=${paths.length}`);
-          for (const name of ['node_modules/postcss','node_modules/vite','node_modules/nanoid','node_modules/picocolors','node_modules/source-map-js']) {
-            const p = lock.packages[name];
-            console.log(name, JSON.stringify(p ? {version:p.version,resolved:p.resolved,integrity:p.integrity,dependencies:p.dependencies,optionalDependencies:p.optionalDependencies} : null));
-          }
-          NODE
-      - name: Install regenerated dependency graph
-        run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Audit regenerated production dependency surface
-        run: npm audit --omit=dev --audit-level=high
-      - name: Show PostCSS dependency path
-        run: npm ls postcss --all
-      - name: Upload generated lock
-        uses: actions/upload-artifact@v4
-        with:
-          name: ramaverse-lock-diagnostic-${{ github.sha }}
-          path: package-lock.json
-          if-no-files-found: error
-          retention-days: 1
+          curl -fsSL \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/9885396050/zip" \
+            -o /tmp/green-lock-artifact.zip
+          unzip -p /tmp/green-lock-artifact.zip package-lock.json > package-lock.json
+          echo "c61a40a96b6948c47f3a7f36399644fe3870730293e7dc571f7583a96a3b7bfb  package-lock.json" | sha256sum -c -
+          test "$(wc -c < package-lock.json)" -eq 106804
+          test "$(node -e 'const l=require("./package-lock.json"); process.stdout.write(String(Object.keys(l.packages||{}).length))')" -eq 211
+          node scripts/check-lock.mjs
+      - name: Commit only the approved package lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- package-lock.json
+          if git diff --cached --quiet; then
+            echo "Approved package-lock.json already tracked; no commit needed."
+            exit 0
+          fi
+          git commit -m "Track exact green dependency lock"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
