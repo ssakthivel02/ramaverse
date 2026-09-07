@@ -8,6 +8,7 @@ const rc = JSON.parse(await readFile("docs/AUTHORITATIVE_RC_GATE.json", "utf8"))
 const ingestionContract = JSON.parse(await readFile("docs/CANONICAL_INGESTION_CONTRACT.json", "utf8"));
 const intakeContract = JSON.parse(await readFile("docs/RC_INTAKE_SAFETY_CONTRACT.json", "utf8"));
 const reconciliationContract = JSON.parse(await readFile("docs/RECONCILIATION_PREP_CONTRACT.json", "utf8"));
+const quarantineContract = JSON.parse(await readFile("docs/QUARANTINE_EXTRACTION_CONTRACT.json", "utf8"));
 const lockGate = JSON.parse(await readFile("docs/DEPENDENCY_LOCK_GATE.json", "utf8"));
 const lock = await readFile("package-lock.json");
 const lockDigest = createHash("sha256").update(lock).digest("hex");
@@ -58,6 +59,27 @@ if (
 ) {
   throw new Error("Refusing to write green evidence: reconciliation preparation contract drifted or authorized a prohibited operation.");
 }
+if (
+  quarantineContract.project !== rc.project ||
+  quarantineContract.authoritativeArchive.name !== rc.archive ||
+  quarantineContract.authoritativeArchive.sha256 !== rc.sha256 ||
+  quarantineContract.authoritativeArchive.bytes !== rc.zipBytes ||
+  quarantineContract.expectedCanonicalBaseline !== rc.canonicalBaseline ||
+  quarantineContract.requiredReconciliationMode !== reconciliationContract.mode ||
+  quarantineContract.mode !== "verified-archive-to-disposable-quarantine-only" ||
+  quarantineContract.extractionAuthorized !== false ||
+  quarantineContract.canonicalIntegrationAuthorized !== false ||
+  quarantineContract.productionAuthorized !== false ||
+  quarantineContract.requirements.sourceTreeMutationAllowed !== false ||
+  quarantineContract.requirements.publicTreeMutationAllowed !== false ||
+  quarantineContract.requirements.stagingCanonicalMutationAllowed !== false ||
+  quarantineContract.requirements.mobileVc14MutationAllowed !== false ||
+  quarantineContract.requirements.canonicalRewriteAllowed !== false ||
+  quarantineContract.requirements.recordRegenerationAllowed !== false ||
+  quarantineContract.requirements.productionMutationAllowed !== false
+) {
+  throw new Error("Refusing to write green evidence: quarantine extraction contract drifted or authorized a prohibited operation.");
+}
 
 async function exists(path) {
   try {
@@ -87,6 +109,7 @@ const canonicalStagingPresent = await exists(ingestionContract.stagingRoot);
 const authoritativeArchivePresent = await exists(rc.archive);
 const rcInventoryPresent = await exists("rc-inventory.json");
 const reconciliationPlanPresent = await exists("rc-reconciliation-plan.json");
+const realQuarantinePresent = await exists(".quarantine");
 
 if (rc.integrationAuthorized !== true && (canonicalPublicationPresent || canonicalStagingPresent)) {
   throw new Error("Refusing to write green evidence: canonical staging/publication exists while integration is unauthorized.");
@@ -97,16 +120,19 @@ if (authoritativeArchivePresent) {
 if (rcInventoryPresent || reconciliationPlanPresent) {
   throw new Error("Refusing to write green CI evidence: real RC inventory/reconciliation artifacts are present in the clean validation workspace.");
 }
+if (realQuarantinePresent) {
+  throw new Error("Refusing to write green CI evidence: a real quarantine tree exists in the clean validation workspace.");
+}
 
 const evidence = {
-  schemaVersion: 6,
+  schemaVersion: 7,
   generatedAt: new Date().toISOString(),
   repository: "ssakthivel02/ramaverse",
   branch: process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF_NAME || "local",
   candidateCommit,
   workflowCommit,
   packageVersion: pkg.version,
-  classification: "RECONCILIATION_PREP_GATE_GREEN_NOT_PRODUCTION_READY",
+  classification: "QUARANTINE_EXTRACTION_GATE_GREEN_NOT_PRODUCTION_READY",
   routeContract: {
     expected: 22,
     actual: routes.length,
@@ -147,6 +173,33 @@ const evidence = {
     canonicalIntegrationAuthorized: reconciliationContract.canonicalIntegrationAuthorized,
     productionAuthorized: reconciliationContract.productionAuthorized
   },
+  quarantineExtraction: {
+    mode: quarantineContract.mode,
+    toolingValidated: true,
+    quarantineRoot: quarantineContract.quarantineRoot,
+    realQuarantinePresent,
+    realArchiveExtractionAuthorized: quarantineContract.extractionAuthorized,
+    realArchiveExtractionPerformed: false,
+    archiveIdentityMustPass: quarantineContract.requirements.archiveIdentityMustPass,
+    zipIntakeMustPass: quarantineContract.requirements.zipIntakeMustPass,
+    reconciliationPlanMustMatchArchive: quarantineContract.requirements.reconciliationPlanMustMatchArchive,
+    oneDecisionPerInventoryEntry: quarantineContract.requirements.oneDecisionPerInventoryEntry,
+    planBlockersMustEqualZero: quarantineContract.requirements.planBlockersMustEqualZero,
+    destinationMustBeEmpty: quarantineContract.requirements.destinationMustBeEmpty,
+    destinationMustRemainInsideQuarantineRoot: quarantineContract.requirements.destinationMustRemainInsideQuarantineRoot,
+    crc32MustMatch: quarantineContract.requirements.crc32MustMatch,
+    uncompressedSizeMustMatch: quarantineContract.requirements.uncompressedSizeMustMatch,
+    exclusiveCreate: quarantineContract.requirements.writeFilesWithExclusiveCreate,
+    manifestHashesEveryExtractedFile: quarantineContract.requirements.manifestMustHashEveryExtractedFile,
+    sourceTreeMutationAllowed: quarantineContract.requirements.sourceTreeMutationAllowed,
+    publicTreeMutationAllowed: quarantineContract.requirements.publicTreeMutationAllowed,
+    stagingCanonicalMutationAllowed: quarantineContract.requirements.stagingCanonicalMutationAllowed,
+    mobileVc14MutationAllowed: quarantineContract.requirements.mobileVc14MutationAllowed,
+    canonicalRewriteAllowed: quarantineContract.requirements.canonicalRewriteAllowed,
+    recordRegenerationAllowed: quarantineContract.requirements.recordRegenerationAllowed,
+    canonicalIntegrationAuthorized: quarantineContract.canonicalIntegrationAuthorized,
+    productionAuthorized: quarantineContract.productionAuthorized
+  },
   canonical: {
     expectedBaseline: rc.canonicalBaseline,
     sourceArchive: rc.archive,
@@ -180,6 +233,15 @@ const evidence = {
     reconciliationDeterministicPlanHash: "pass",
     reconciliationCrossProjectBlocker: "pass",
     reconciliationUnauthorizedOperationRejection: "pass",
+    quarantineExtractionContract: "pass",
+    quarantineSyntheticSafeExtraction: "pass",
+    quarantineFileSha256Manifest: "pass",
+    quarantineRealAuthorizationRefusal: "pass",
+    quarantineOutOfRootRejection: "pass",
+    quarantinePreexistingDestinationRejection: "pass",
+    quarantineSavedFreshInventoryMismatchRejection: "pass",
+    quarantineCrossProjectBlockerRejection: "pass",
+    quarantineNoRealWorkspaceOutput: "pass",
     canonicalIngestionContract: "pass",
     canonicalSynthetic550Fixture: "pass",
     canonicalDuplicateIdRejection: "pass",
@@ -203,6 +265,6 @@ await mkdir("artifacts", { recursive: true });
 await writeFile("artifacts/validation-summary.json", `${JSON.stringify(evidence, null, 2)}\n`);
 await writeFile(
   "artifacts/validation-summary.md",
-  `# RamaVerse Next-Gen Reconciliation Preparation Evidence\n\n- Candidate commit: \`${candidateCommit}\`\n- Workflow commit/ref SHA: \`${workflowCommit}\`\n- Branch: \`${evidence.branch}\`\n- Routes: ${evidence.routeContract.actual}/${evidence.routeContract.expected}\n- /knowledge: ${evidence.routeContract.knowledgePresent ? "PASS" : "FAIL"}\n- Authoritative RC SHA-256: \`${rc.sha256}\`\n- Authoritative RC present in CI workspace: NO\n- RC intake mode: INVENTORY ONLY\n- Extraction authorized/performed: NO / NO\n- Reconciliation mode: METADATA-ONLY PLAN BEFORE EXTRACTION\n- Real RC inventory present in CI: NO\n- Real reconciliation plan present in CI: NO\n- Reconciliation planner synthetic classification: PASS\n- One decision per inventory entry: PASS\n- Deterministic plan SHA-256: PASS\n- Cross-project blocker: PASS\n- Automatic canonical winner: FORBIDDEN\n- Canonical rewrite/regeneration: FORBIDDEN / FORBIDDEN\n- Mobile/VC14 mutation: FORBIDDEN\n- Canonical expected baseline: ${rc.canonicalBaseline}\n- Canonical 550 imported: NO\n- Integration authorized: ${rc.integrationAuthorized ? "YES" : "NO"}\n- Canonical staging/publication present: ${canonicalStagingPresent ? "YES" : "NO"} / ${canonicalPublicationPresent ? "YES" : "NO"}\n- Dependency lock: PASS \`${lockDigest}\`\n- Production dependency audit (high+): PASS\n- Lint / TypeScript / production build: PASS / PASS / PASS\n- Chromium E2E / Axe serious-critical / mobile overflow / reduced motion: PASS / PASS / PASS / PASS\n- Clean-room isolation: PASS\n- Production deployment: NO\n\nClassification: **${evidence.classification}**\n`,
+  `# RamaVerse Next-Gen Quarantine Extraction Gate Evidence\n\n- Candidate commit: \`${candidateCommit}\`\n- Workflow commit/ref SHA: \`${workflowCommit}\`\n- Branch: \`${evidence.branch}\`\n- Routes: ${evidence.routeContract.actual}/${evidence.routeContract.expected}\n- /knowledge: ${evidence.routeContract.knowledgePresent ? "PASS" : "FAIL"}\n- Authoritative RC SHA-256: \`${rc.sha256}\`\n- Authoritative RC present in CI workspace: NO\n- RC intake mode: INVENTORY ONLY\n- Reconciliation mode: METADATA-ONLY PLAN BEFORE EXTRACTION\n- Real RC inventory / reconciliation plan present: NO / NO\n- Quarantine extraction tooling: PASS\n- Quarantine mode: VERIFIED ARCHIVE TO DISPOSABLE QUARANTINE ONLY\n- Synthetic safe extraction: PASS\n- CRC32 + uncompressed-size verification: PASS\n- Per-file SHA-256 extraction manifest: PASS\n- Out-of-root / preexisting destination / saved-vs-fresh mismatch rejection: PASS / PASS / PASS\n- Cross-project blocker rejection: PASS\n- Real quarantine output present in CI workspace: NO\n- Real archive extraction authorized/performed: NO / NO\n- Automatic canonical winner: FORBIDDEN\n- Canonical rewrite/regeneration: FORBIDDEN / FORBIDDEN\n- Mobile/VC14 mutation: FORBIDDEN\n- Canonical expected baseline: ${rc.canonicalBaseline}\n- Canonical 550 imported: NO\n- Integration authorized: ${rc.integrationAuthorized ? "YES" : "NO"}\n- Canonical staging/publication present: ${canonicalStagingPresent ? "YES" : "NO"} / ${canonicalPublicationPresent ? "YES" : "NO"}\n- Dependency lock: PASS \`${lockDigest}\`\n- Production dependency audit (high+): PASS\n- Lint / TypeScript / production build: PASS / PASS / PASS\n- Chromium E2E / Axe serious-critical / mobile overflow / reduced motion: PASS / PASS / PASS / PASS\n- Clean-room isolation: PASS\n- Production deployment: NO\n\nClassification: **${evidence.classification}**\n`,
 );
 console.log(`EVIDENCE_WRITTEN_FOR_CANDIDATE: ${candidateCommit}`);

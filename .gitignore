@@ -9,4 +9,5 @@ coverage/
 .DS_Store
 Thumbs.db
 staging/canonical-import/
+.quarantine/
 RAMAVERSE-WEBSITE-NATIVE-UPGRADE-RC.zip

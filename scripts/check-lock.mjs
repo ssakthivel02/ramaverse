@@ -10,11 +10,13 @@ const packageEntries = Object.keys(lockJson.packages ?? {}).length;
 const postcss = lockJson.packages?.[gate.reviewedTransitiveChange?.packagePath];
 
 const failures = [];
-if (gate.schemaVersion !== 2) failures.push("dependency lock gate schemaVersion changed");
+if (gate.schemaVersion !== 3) failures.push("dependency lock gate schemaVersion changed");
 if (gate.project !== "RamaVerse") failures.push("project identity changed");
 if (gate.packageVersion !== "0.3.0") failures.push("package version gate changed");
 if (gate.nodeMajor !== 22) failures.push("Node major gate changed");
 if (gate.packageLockVersion !== 3 || lockJson.lockfileVersion !== 3) failures.push("lockfile version changed");
+if (gate.lockfileTracked !== true) failures.push("package lock is not required to be tracked");
+if (gate.ciRegenerationAllowed !== false) failures.push("CI dependency regeneration was authorized");
 if (gate.allowDependencyDrift !== false) failures.push("dependency drift was authorized");
 if (digest !== gate.packageLockSha256) failures.push(`lock SHA mismatch ${digest}`);
 if (bytes !== gate.packageLockBytes) failures.push(`lock byte-size mismatch ${bytes}`);
@@ -39,6 +41,8 @@ if (failures.length) {
 }
 
 console.log("DEPENDENCY_LOCK_GATE_PASS");
+console.log("LOCKFILE_TRACKED=true");
+console.log("CI_REGENERATION_ALLOWED=false");
 console.log(`PACKAGE_LOCK_SHA256=${digest}`);
 console.log(`PACKAGE_LOCK_BYTES=${bytes}`);
 console.log(`PACKAGE_ENTRIES=${packageEntries}`);
