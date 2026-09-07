@@ -45,9 +45,13 @@ try {
   const result = await promoteQuarantineToReviewStaging({ quarantineDirectory:quarantineDir, quarantineManifest:manifest, reconciliationPlan:plan, contract:testContract, destination });
   if (result.promotedFileCount !== 2 || result.skippedFileCount !== 1) throw new Error("promotion counts mismatch");
   if (result.canonicalWinnerSelected !== false || result.canonicalIntegrationAuthorized !== false || result.productionAuthorized !== false) throw new Error("promotion manifest authorized a prohibited downstream state");
-  if (!(await exists(join(destination,"src/App.tsx"))) || !(await exists(join(destination,"content/kandas.json")))) throw new Error("reviewable files were not promoted");
+  const promotedSourceExists = await exists(join(destination,"src/App.tsx"));
+  const promotedCanonicalCandidateExists = await exists(join(destination,"content/kandas.json"));
+  if (!promotedSourceExists || !promotedCanonicalCandidateExists) throw new Error("reviewable files were not promoted");
   if (await exists(join(destination,"mobile/App.kt"))) throw new Error("Mobile/VC14 file crossed staging gate");
-  if (!(await exists(join(quarantineDir,"src/App.tsx"))) || !(await exists(join(quarantineDir,"mobile/App.kt"))) throw new Error("copy-only gate mutated quarantine source");
+  const originalSourceExists = await exists(join(quarantineDir,"src/App.tsx"));
+  const originalMobileExists = await exists(join(quarantineDir,"mobile/App.kt"));
+  if (!originalSourceExists || !originalMobileExists) throw new Error("copy-only gate mutated quarantine source");
   const persisted = JSON.parse(await readFile(join(destination,"promotion-manifest.json"),"utf8"));
   if (!/^[a-f0-9]{64}$/.test(persisted.promotionManifestSha256)) throw new Error("promotion manifest digest missing");
 
