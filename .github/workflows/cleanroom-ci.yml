@@ -33,11 +33,12 @@ jobs:
         with:
           node-version: 22
 
-      - name: Recreate exact dependency lock candidate
-        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-
-      - name: Reject dependency graph drift
-        run: node scripts/check-lock.mjs
+      - name: Verify tracked dependency lock identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          git ls-files --error-unmatch package-lock.json >/dev/null
+          node scripts/check-lock.mjs
 
       - name: Install exact verified dependency graph
         run: npm ci --ignore-scripts --no-audit --no-fund
