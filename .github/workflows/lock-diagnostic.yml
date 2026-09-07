@@ -1,0 +1,49 @@
+name: RamaVerse temporary lock diagnostic
+
+on:
+  push:
+    branches:
+      - website-nextgen-quarantine-extraction-gate-v1
+
+permissions:
+  contents: read
+
+jobs:
+  lock-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Recreate package lock
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+      - name: Print lock identity and reviewed transitive paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum package-lock.json
+          wc -c package-lock.json
+          node - <<'NODE'
+          const lock = require('./package-lock.json');
+          const paths = Object.keys(lock.packages || {});
+          console.log(`PACKAGE_ENTRY_COUNT=${paths.length}`);
+          for (const name of ['node_modules/postcss','node_modules/vite','node_modules/nanoid','node_modules/picocolors','node_modules/source-map-js']) {
+            const p = lock.packages[name];
+            console.log(name, JSON.stringify(p ? {version:p.version,resolved:p.resolved,integrity:p.integrity,dependencies:p.dependencies,optionalDependencies:p.optionalDependencies} : null));
+          }
+          NODE
+      - name: Install regenerated dependency graph
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Audit regenerated production dependency surface
+        run: npm audit --omit=dev --audit-level=high
+      - name: Show PostCSS dependency path
+        run: npm ls postcss --all
+      - name: Upload generated lock
+        uses: actions/upload-artifact@v4
+        with:
+          name: ramaverse-lock-diagnostic-${{ github.sha }}
+          path: package-lock.json
+          if-no-files-found: error
+          retention-days: 1
